@@ -11,6 +11,12 @@
 \usepackage{etoolbox}
 \usepackage{titlesec}
 \usepackage{tocloft}
+
+\usepackage{ntheorem}
+
+
+
+
 %%%%%%%%%调整subsection与subsubsection格式
 \titlespacing*{\subsubsection}{0pt}{0.5ex plus .2ex minus .2ex}{%
 	0.5ex plus .2ex
@@ -27,7 +33,7 @@
 %		\setlength{\itemsep}{0ex}%
 %		\setlength{\itemindent}{4ex}
 %		\setlength{\leftmargin}{-3pt}%
-%	}%
+%	}% 
 %	{
 %	\end{oldthebibliography}%
 %}
@@ -57,14 +63,23 @@
 %%%%%貌似是数学公式从每个章节（section）重新开始编号
 \@addtoreset{equation}{section}
 \makeatother
+
+%%%%%%%%%%%%%为了让长到换行的标题能够在第一个字的位置对齐：
+%%%%%%%%%%%%%请在断行的位置加上   \\\hspace{4.1em}  如：
+
+% \title{这是一个很，特别，尤其，过分，极为，十分，\\ \hspace{4.1em}超级，无敌长的标题}
+
 \title{线性表的设计和实现}
+
 \author{张三}
 \date{2018年6月1日}
 \supervisor{李\hspace{0.53cm}四}
 \stuid{1401013101}
 \classnum{电气工程及其自动化14-5班}
 %\subtitle{这是副标题}
-%%%%%%%%%%%加入居中环境使得英文摘要标题可以居中，另外由于题目较长超出纸张宽度，将英文摘要标题设置的makebox改为parbox，中文摘%%%%%%%%%%%要标题由于本人毕业设计题目较短未进行更改，如有需求可依葫芦画瓢进行改正
+
+%%%%%%%中英题目
+\cntitle{\begin{center}线性表的设计和实现\end{center}}
 \entitle{\begin{center}The design and implementation of the linear form\end{center}}
 %\ensubtitle{This is EnSubTitle}
 \begin{document}
@@ -80,10 +95,35 @@
 
 \tableofcontents
 
+
 \section{引言}
 计算机与网络技术的高速发展，特别是面向对象技术的出现，使得C++的软件开发得到了迅速普及。
 
 本课题主要………………
+
+
+
+
+
+
+
+% 定义正文中需要的各种定理环境
+\theorembodyfont{\songti}
+\newtheorem{mdef}{\quad\quad 定义}[section]　%按一级标题编号
+\theorembodyfont{\songti}
+\newtheorem{mthe}{\quad\quad 定理}[section]
+\theorembodyfont{\songti}
+\newtheorem*{mpro}{\quad\quad 证明} %不编号
+\theorembodyfont{\songti}
+\newtheorem{mlma}{\quad\quad 引理}[section]
+\theorembodyfont{\songti}
+\newtheorem{mcor}{\quad\quad 推论}[section]
+\theorembodyfont{\songti}
+\newtheorem{mexa}{\quad\quad 例}[section]
+
+
+
+
 \section{线性表的基本理论知识}
 \subsection{线性表的定义}
 线性表是最简单、最常用\cite{Rouse1974Monitoring}的一种数据结构。线性表\cite{贾永红2010数字图像处理}是n（n>=0）个数据元素的有限序列。
@@ -97,9 +137,37 @@
 	\item [(1)] 三级以下标题
 \end{itemize}
 
+
+
+
 \subsection{线性链表}
 
 线性表的链式存储结构的特点是用一组任意的存储单元存储线性表的数据元素（这组元素可以是连续的,也可以是不连续的）。
+
+
+\begin{mdef}
+线性表的定义为
+\end{mdef}
+
+
+\begin{mthe}
+  设
+  
+\begin{mpro}
+由线性表的特殊定义可得。
+\end{mpro}
+\end{mthe}
+
+\begin{mlma}
+  设
+  
+\begin{mpro}
+由线性表的特殊定义可得。
+\end{mpro}
+\end{mlma}
+
+
+
 \section{设计的主体内容}
 在着手进行上机设计之前首先做好大量准备:应熟悉课题，进行调查研究，收集国内、外资料、分析研究；交互界面的设计和实现。
 
@@ -220,15 +288,31 @@
 	
 	……
 \end{thankpage}
-\bibliography{./bibs/bibliography.bib}
 
-%\begin{generalappendices}
-%%\begin{appendices}
-%	\section{Appendix 1}
-%	\subsection{Some Appendix}
-%	\lipsum[11]
-%	\section{Appendix 2}
-%	\subsection{Some Other Appendix}
-%%\end{appendices}[toc, page, title, titletoc, header]
-%\end{generalappendices}
+
+
+
+%\bibliography{./bibs/bibliography.bib}
+
+%%%%%之前的.bib生成引用的样式与word要求不一致。能力有限，暂时无法修改
+%%%%%样式文件达到学校要求的效果。劳烦同学们手动引用文献
+
+\clearpage
+\pagestyle{afterbody}
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\begin{thebibliography}{99}
+\bibitem{Rouse1974Monitoring} 按照格式要求填写这里
+\bibitem{贾永红2010数字图像处理}
+\bibitem{按顺序列出你的参考文献}
+\end{thebibliography}
+%%%%%%%%附录，不需要的同学可以删去此部分
+
+\begin{generalappendices}
+	\section{名词术语及缩略词}
+	\subsection{Some Appendix}
+	\lipsum[11]
+	\section{Appendix 2}
+	\subsection{Some Other Appendix}
+\end{generalappendices}
 \end{document}

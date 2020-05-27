@@ -371,6 +371,7 @@
 \def \@subtitle {}
 \def \@entitle {}
 \def \@ensubtitle {}
+\def \@cntitle {}
 \newcommand{\school}[1]{\def \@school{#1}}
 \newcommand{\classnum}[1]{\def \@classnum{#1}}
 \newcommand{\stuid}[1]{\def \@stuid{#1}}
@@ -378,7 +379,7 @@
 \newcommand{\subtitle}[1]{\def \@subtitle{------#1}}
 \newcommand{\ensubtitle}[1]{\def \@ensubtitle{------#1}}
 \newcommand{\entitle}[1]{\def \@entitle{#1}}
-
+\newcommand{\cntitle}[1]{\def \@cntitle{#1}}
 % 设置 \maketitle 参数解析
 \newcommand{\arg@maketitle}[2]{%
 	\IfStrEqCase{#1}{%
@@ -544,9 +545,9 @@
 	\phantomsection
 %	\addcontentsline{toc}{section}{摘要}
 	\begin{center}
-		\vspace*{1.5em}
-		\makebox[\textwidth]{\heiti \zihao{-2} \@title}\\
-		%
+		\vspace*{1em}
+		\parbox[c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em} \@cntitle
+		\vspace{0.5em}}\\
 		\StrLen{\@subtitle}[\SubTitleLen]
 		\ifnum \SubTitleLen > 0
 			\makebox[\textwidth][r]{\heiti \zihao{-2} \@subtitle}
@@ -613,7 +614,7 @@
 \renewcommand{\cftsecindent}{0em}
 \renewcommand{\cftsubsecindent}{1.9em}
 \renewcommand{\cftsubsubsecindent}{3.8em}
-\renewcommand{\cftsecnumwidth}{4em}
+\renewcommand{\cftsecnumwidth}{1em}
 \renewcommand{\cftsubsecnumwidth}{1em}
 \renewcommand{\cftsubsubsecnumwidth}{1em}
 \renewcommand{\cftbeforesecskip}{0em} %设置段间距
