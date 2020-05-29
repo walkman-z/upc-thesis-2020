@@ -161,10 +161,12 @@
 		aftertitle=\vspace{1.3em}
 	},
 	subsection={%
-		format={\raggedright \heiti \zihao{4}}
+		format={\raggedright \heiti \zihao{4}},
+		aftername=\hspace{0.35em}
 	},
 	subsubsection={%
-		format={\raggedright \heiti \zihao{-4}}
+		format={\raggedright \heiti \zihao{-4}},
+		aftername=\hspace{0.35em}
 	}
 }
 
