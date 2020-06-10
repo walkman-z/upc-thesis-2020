@@ -769,7 +769,7 @@
 %----重新定义参考文献页----
 %------------------------
 % 设置参考文献 
-\usepackage[square]{natbib}
+\usepackage[square,comma,sort&compress]{natbib}
 \setlength{\bibhang}{0pt}
 \setcitestyle{numbers, square, comma}
 \ctexset{bibname={参考文献}}
