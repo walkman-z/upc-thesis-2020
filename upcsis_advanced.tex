@@ -12,23 +12,58 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 
-\usepackage{ntheorem}
+% \usepackage{ntheorem}
+\usepackage{amsthm}
 
 
 
 
 
+% \theorembodyfont{\songti}
+% {
+% \newtheorem{mdef}{\hskip 2em 定义}[section]  %按一级标题section编号
+% \newtheorem{mthe}{\hskip 2em 定理}[section]
+% \newtheorem{mlma}[mthe]{\hskip 2em 引理}[section]
+% \newtheorem{mcor}[mthe]{\hskip 2em 推论}[section]
+% \newtheorem{mprop}[mthe]{\hskip 2em 命题 }[section]
+% \newtheorem*{mpro}{\hskip 2em 证明} %不编号
+% \newtheorem*{msol}{\hskip 2em 解} %不编号
+% \newtheorem{mexa}{\hskip 2em 例 }[section]
+% }
 
-\theorembodyfont{\songti}
-{
-\newtheorem{mdef}{\hskip 2em 定义}[section]  %按一级标题section编号
-\newtheorem{mthe}{\hskip 2em 定理}[section]
-\newtheorem*{mpro}{\hskip 2em 证明} %不编号
-\newtheorem{mlma}{\hskip 2em 引理}[section]
-\newtheorem{mcor}{\hskip 2em 推论}[section]
-\newtheorem{mprop}{\hskip 2em 命题 }[section]
-\newtheorem{mexa}{\hskip 2em 例 }[section]
-}
+
+
+
+% 中文定理环境
+% \indent 为了段前空两格
+
+
+% \theorembodyfont{\songti}
+% {
+\newtheorem{definition}{\indent 定义}[section]
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{lemma}[theorem]{\indent 引理}
+\newtheorem{proposition}[theorem]{\indent 命题}
+\newtheorem{corollary}[theorem]{\indent 推论}
+\newtheorem{example}{\indent 例}[section]
+\newtheorem{remark}{\indent 注}[section]
+\newenvironment{solution}{\begin{proof}[\indent\textbf{解}]}{\end{proof}}
+\renewcommand{\proofname}{\indent\bf 证明}
+% }
+
+% English theorem environment
+
+% \theoremstyle{margin}
+% {
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{remark}{Remark}[section]
+% \newtheorem{example}{Example}[section]
+% \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+% }
 
 
 %%%%%%%%%调整subsection与subsubsection格式
@@ -78,26 +113,22 @@
 \@addtoreset{equation}{section}
 \makeatother
 
-\title{线性表的设计和实现}
+\title{线性表的设计和实现实现实现实现实现}
 
 \author{张三}
-\date{2018年6月1日}
+\date{\today}
 \supervisor{罗\hspace{0.53cm}翔}
 \stuid{1401013101}
 \classnum{电气工程及其自动化14-5班}
-%\subtitle{这是副标题}
+\subtitle{这是副标题}
 
 
-%%%%%%%%%%%%%为了让长到换行的标题能够在第一个字的位置对齐,请在断行的位置加上   \\\hspace{4.1em} 
-
-
-%%%%%%%中英题目
-\cntitle{\begin{center}线性表的设计和实现\end{center}}
+%%%%%%%英文题目
 \entitle{\begin{center}The design and implementation of the linear form\end{center}}
 %\ensubtitle{This is EnSubTitle}
 \begin{document}
 \maketitle
-%	\lipsum[1]
+
 \include{abstract}
 
 \tableofcontents

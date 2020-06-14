@@ -373,7 +373,6 @@
 \def \@subtitle {}
 \def \@entitle {}
 \def \@ensubtitle {}
-\def \@cntitle {}
 \newcommand{\school}[1]{\def \@school{#1}}
 \newcommand{\classnum}[1]{\def \@classnum{#1}}
 \newcommand{\stuid}[1]{\def \@stuid{#1}}
@@ -381,7 +380,6 @@
 \newcommand{\subtitle}[1]{\def \@subtitle{------#1}}
 \newcommand{\ensubtitle}[1]{\def \@ensubtitle{------#1}}
 \newcommand{\entitle}[1]{\def \@entitle{#1}}
-\newcommand{\cntitle}[1]{\def \@cntitle{#1}}
 % 设置 \maketitle 参数解析
 \newcommand{\arg@maketitle}[2]{%
 	\IfStrEqCase{#1}{%
@@ -435,7 +433,7 @@
 				\vspace*{36pt}
 				
 				\begin{flushleft}
-				\hspace{0.8em}\zihao{-2} \heiti \makebox[3.3em]{题\hfill 目:} \@title
+				\hspace{0.8em}\zihao{-2} \heiti \makebox[15cm]{题\hspace{0.8em}目\textbf{：}\parbox[h][1em][l]{13.5cm}{\@title}} 
 				\end{flushleft}
 				\makebox[\textwidth][r]{\heiti \zihao{-2} \@subtitle}
 %				\vspace{9.7em}
@@ -459,6 +457,9 @@
 		\vspace{3em}
 	\end{titlepage}
 }
+
+
+
 
 %----------------------------
 %-------定义新的声明页面-------
@@ -548,7 +549,8 @@
 %	\addcontentsline{toc}{section}{摘要}
 	\begin{center}
 		\vspace*{1em}
-		\parbox[c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em} \@cntitle
+		\parbox[h][1em][c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em} 
+		\begin{center}\@title\end{center}
 		\vspace{0.5em}}\\
 		\StrLen{\@subtitle}[\SubTitleLen]
 		\ifnum \SubTitleLen > 0
@@ -563,10 +565,11 @@
 }{
 	\vspace{1.5em}
 	\par\noindent
-	{\songti \zihao{-4} \bfseries \hspace{0.85cm}关键词：}
-	\cnkeyword
+	{\songti \zihao{-4} \bfseries \hspace{0.85cm}关键词：}\parbox[h][1em][l]{13.5cm}{\cnkeyword}
 	\clearpage
 }
+
+
 
 \newenvironment{enabstract}[1]{
 	\def \enkeyword {#1}
@@ -588,8 +591,7 @@
 }{
 	\vspace{1.5em}
 	\par\noindent
-	{\zihao{-4} \bfseries \hspace{0.85cm}Keywords: }
-	\enkeyword
+	{\zihao{-4} \bfseries \hspace{0.85cm}Keywords: }\parbox[h][1em][l]{13cm}{\enkeyword}
 	\clearpage
 }
 
