@@ -1,4 +1,12 @@
 
+\ifx\compileAllFiles\undefined
+\documentclass[supercite]{../upcthesis}
+\input{0-preamble}
+\begin{document}
+\fi
+
+%正文内容
+%%%%%---------------------------------------------------------------------
 
 \section{引言}
 计算机与网络技术的高速发展，特别是面向对象技术的出现，使得C++的软件开发得到了迅速普及。
@@ -73,7 +81,7 @@
 \begin{figure}[htbp]
 \centering
 
-\includegraphics{./figure/guozuni.png}
+\includegraphics{figure/guozuni.png}
 \caption{过阻尼响应}
 \label{guozuni}
 \end{figure}
@@ -164,3 +172,12 @@
         …….
 
         而且还存在着许多不足之处。如：
+
+
+
+
+%%%%%---------------------------------------------------------------------
+
+\ifx\compileAllFiles\undefined
+\end{document}
+\fi

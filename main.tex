@@ -1,8 +1,49 @@
+\documentclass[supercite]{upcthesis}
+%导言区设置
+\input{sections/0-preamble}
+%控制分段编译的flag
+\def\compileAllFiles{}
 
-\section{一级标题}
-\subsection{二级标题}
-\subsubsection{三级标题}
 
-\begin{itemize}
-        \item [(1)] 三级以下标题
-\end{itemize}
+% 封面各项参数
+\makeatother
+\title{线性表的设计和实现实现实现实现实现}
+% \subtitle{这是副标题}
+% \ensubtitle{This is EnSubTitle}
+\entitle{The design and implementation of the linear form}
+\author{张\hspace{0.53cm}三}
+\date{\today}
+\supervisor{罗\hspace{0.53cm}翔}
+\stuid{1401013101}
+\classnum{电气工程及其自动化14-5班}
+
+
+
+\begin{document}
+% 封面页
+\maketitle
+% 中英摘要页
+\input{sections/1-abstract}
+% 目录页
+\tableofcontents
+
+% 与word模板一致的实例，测试用。
+% 写你的论文时注释掉这一行
+% 可用作参考
+\input{sections/example}
+
+
+% % 你的章节
+% \input{sections/section1}
+% \input{sections/section2}
+% \input{sections/section3}
+% \input{sections/section4}
+
+% 感谢页
+\input{sections/2-thankpage}
+% 参考文献页
+\input{sections/3-reference}
+
+%%%%%%%%附录，不需要的同学可以删去此部分
+\input{sections/4-appendix}
+\end{document}

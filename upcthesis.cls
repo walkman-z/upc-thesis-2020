@@ -578,7 +578,7 @@
 %	\addcontentsline{toc}{section}{Abstract}
 	\begin{center}
 		\vspace*{1em}
-		\parbox[c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em} \@entitle
+		\parbox[c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em}\begin{center}\@entitle\end{center}
 		\vspace{0.5em}}\\
 		\StrLen{\@ensubtitle}[\EnSubTitleLen]
 		\ifnum \EnSubTitleLen > 0

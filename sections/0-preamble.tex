@@ -1,4 +1,3 @@
-\documentclass[supercite]{upcthesis}
 \usepackage{lipsum}
 \usepackage{makecell}
 \usepackage{amsmath}
@@ -12,31 +11,13 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 
-% \usepackage{ntheorem}
 \usepackage{amsthm}
-
-
-
-
-
-% \theorembodyfont{\songti}
-% {
-% \newtheorem{mdef}{\hskip 2em 定义}[section]  %按一级标题section编号
-% \newtheorem{mthe}{\hskip 2em 定理}[section]
-% \newtheorem{mlma}[mthe]{\hskip 2em 引理}[section]
-% \newtheorem{mcor}[mthe]{\hskip 2em 推论}[section]
-% \newtheorem{mprop}[mthe]{\hskip 2em 命题 }[section]
-% \newtheorem*{mpro}{\hskip 2em 证明} %不编号
-% \newtheorem*{msol}{\hskip 2em 解} %不编号
-% \newtheorem{mexa}{\hskip 2em 例 }[section]
-% }
 
 
 
 
 % 中文定理环境
 % \indent 为了段前空两格
-
 
 % \theorembodyfont{\songti}
 % {
@@ -109,37 +90,7 @@
 {\def\@noitemerr
 	{\@latex@warning{Empty `thebibliography' environment}}%
 	\endlist}
+
 %%%%%貌似是数学公式从每个章节（section）重新开始编号
 \@addtoreset{equation}{section}
-\makeatother
 
-\title{线性表的设计和实现实现实现实现实现}
-
-\author{张三}
-\date{\today}
-\supervisor{罗\hspace{0.53cm}翔}
-\stuid{1401013101}
-\classnum{电气工程及其自动化14-5班}
-\subtitle{这是副标题}
-
-
-%%%%%%%英文题目
-\entitle{\begin{center}The design and implementation of the linear form\end{center}}
-%\ensubtitle{This is EnSubTitle}
-\begin{document}
-\maketitle
-
-\include{abstract}
-
-\tableofcontents
-
-% 加入示例的文章主要部分
-\include{examplemain}
-% \include{main}
-
-
-\include{thankpage}
-\include{reference}
-%%%%%%%%附录，不需要的同学可以删去此部分
-\include{appendix}
-\end{document}
