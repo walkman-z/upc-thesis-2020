@@ -1,4 +1,11 @@
 
+\ifx\compileAllFiles\undefined
+\documentclass[supercite]{upcthesis}
+\input{0-preamble}
+\begin{document}
+\fi
+%%%%%---------------------------------------------------------------------
+
 \begin{generalappendices}
         \section{名词术语及缩略词}
         \subsection{Some Appendix}
@@ -6,3 +13,10 @@
         \section{Appendix 2}
         \subsection{Some Other Appendix}
 \end{generalappendices}
+
+
+
+%%%%%---------------------------------------------------------------------
+\ifx\compileAllFiles\undefined
+\end{document}
+\fi

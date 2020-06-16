@@ -15,36 +15,111 @@
 
 
 
+% \def\entheorem{} %%%%%将此行取消注释以切换为英文定理环境
 
+
+
+%%%%%中英定理类环境的声明
+%%%%%---------------------------------------------------------------------
+
+% 定义定理样式
+\newtheoremstyle{thesty}
+{3pt} %环境前间距
+{3pt} %环境后间距
+{\songti} %定理内字体
+{2em} %头部缩进
+{\bfseries\songti} %定理头部字体
+{} %头部后添加符号
+{0.5em} %头部后间距
+{} %theorem head spec
+
+% 应用定理样式
+\theoremstyle{thesty}
+
+\ifx\entheorem\undefined
 % 中文定理环境
-% \indent 为了段前空两格
+{
+	\newtheorem{definition}{定义}[section]
+	\newtheorem{theorem}{定理}[section]
+	\newtheorem{lemma}[theorem]{引理}
+	\newtheorem{proposition}[theorem]{命题}
+	\newtheorem{corollary}[theorem]{推论}
+	\newtheorem{example}{例}[section]
+	\newtheorem{remark}{注}[section]
+}
+\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{\hfill\qedsymbol\par}
+\renewenvironment{proof}{\begin{proofenv}{证明:}}{\end{proofenv}}
+\newenvironment{solution}{\begin{proofenv}{解:}}{\end{proofenv}}
 
-% \theorembodyfont{\songti}
-% {
-\newtheorem{definition}{\indent 定义}[section]
-\newtheorem{theorem}{\indent 定理}[section]
-\newtheorem{lemma}[theorem]{\indent 引理}
-\newtheorem{proposition}[theorem]{\indent 命题}
-\newtheorem{corollary}[theorem]{\indent 推论}
-\newtheorem{example}{\indent 例}[section]
-\newtheorem{remark}{\indent 注}[section]
-\newenvironment{solution}{\begin{proof}[\indent\textbf{解}]}{\end{proof}}
-\renewcommand{\proofname}{\indent\bf 证明}
-% }
+\else
 
-% English theorem environment
+%% 英文定理环境
+{
+	\newtheorem{theorem}{Theorem}[section]
+	\newtheorem{lemma}[theorem]{Lemma}
+	\newtheorem{proposition}[theorem]{Proposition}
+	\newtheorem{corollary}[theorem]{Corollary}
+	\newtheorem{definition}{Definition}[section]
+	\newtheorem{example}{Example}[section]
+	\newtheorem{remark}{Remark}[section]
+}
 
-% \theoremstyle{margin}
-% {
-% \newtheorem{theorem}{Theorem}[section]
-% \newtheorem{lemma}[theorem]{Lemma}
-% \newtheorem{proposition}[theorem]{Proposition}
-% \newtheorem{corollary}[theorem]{Corollary}
-% \newtheorem{definition}{Definition}[section]
-% \newtheorem{remark}{Remark}[section]
-% \newtheorem{example}{Example}[section]
-% \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
-% }
+\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{\hfill\qedsymbol\par}
+\renewenvironment{proof}{\begin{proofenv}{Proof:}}{\end{proofenv}}
+\newenvironment{solution}{\begin{proofenv}{Solution:}}{\end{proofenv}}
+
+\fi
+%%%%%---------------------------------------------------------------------
+
+
+
+
+\def\sectionautorefname~#1\null{%
+	第~#1~节\null
+}
+\def\subsectionautorefname~#1\null{%
+	第~#1~小节\null
+}
+\def\subsubsectionautorefname~#1\null{%
+	第~#1~小节\null
+}
+\def\subsubsectionautorefname~#1\null{%
+	第~#1~小节\null
+}
+\def\paragraphautorefname~#1\null{%
+	段落~#1~\null
+}
+\def\subparagraphautorefname~#1\null{%
+	段落~#1~\null
+}
+
+
+% 重新设置图表 auto ref
+\def\figureautorefname~#1\null{%
+	图~#1~\null
+}
+\def\tableautorefname~#1\null{%
+	表~#1~\null
+}
+
+% 重新设置公式autoref
+\def\equationautorefname~#1\null{%
+	式~(#1)~\null
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%调整subsection与subsubsection格式

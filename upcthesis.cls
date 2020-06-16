@@ -236,24 +236,6 @@
 
 
 
-\def\sectionautorefname~#1\null{%
-	第~#1~节\null
-}
-\def\subsectionautorefname~#1\null{%
-	第~#1~小节\null
-}
-\def\subsubsectionautorefname~#1\null{%
-	第~#1~小节\null
-}
-\def\subsubsectionautorefname~#1\null{%
-	第~#1~小节\null
-}
-\def\paragraphautorefname~#1\null{%
-	段落~#1~\null
-}
-\def\subparagraphautorefname~#1\null{%
-	段落~#1~\null
-}
 
 
 
@@ -282,13 +264,6 @@
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 
-% 重新设置图表 auto ref
-\def\figureautorefname~#1\null{%
-	图~#1~\null
-}
-\def\tableautorefname~#1\null{%
-	表~#1~\null
-}
 
 % 使用 tabularx 库定义新的左右中格式
 \RequirePackage{tabularx}
@@ -348,10 +323,6 @@
 %\numberwithin{equation}{section}
 
 
-% 重新设置公式autoref
-\def\equationautorefname~#1\null{%
-	式~(#1)~\null
-}
 
 
 %---------------------------
