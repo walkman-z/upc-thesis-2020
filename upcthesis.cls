@@ -80,6 +80,7 @@
 %-----------------
 \LoadClass[a4paper]{article}
 % AutoFakeBold 表示伪粗的粗度
+
 \RequirePackage[AutoFakeBold=1.28, AutoFakeSlant=true]{xeCJK}[2017/08/08]
 \RequirePackage[zihao=-4, UTF8, heading=true\UPC@fontset]{ctex}[2016/12/27]
 
@@ -356,8 +357,8 @@
 	\IfStrEqCase{#1}{%
 		{logo color}{%
 			\IfStrEqCase{#2}{%
-				{green}{\def\UPC@titleColor{UPCLogo.png}}
-				{black}{\def\UPC@titleColor{UPCLogo.png}}
+				{green}{\def\UPC@titleColor{figure/UPCLogo.png}}
+				{black}{\def\UPC@titleColor{figure/UPCLogo.png}}
 			}[\ClassWarning{\UPC@name}{There's no such value for #1 (maketitle)}]
 		}
 		{line length}{\def\UPC@titlelength{#2}}
@@ -390,7 +391,7 @@
 % 重置命令 maketitle
 \renewcommand{\maketitle}[1][12em]{
 %	\renewcommand{\thepage}{S\arabic{page}}
-	\def\UPC@titlecolor{UPCLogo.png}
+	\def\UPC@titlecolor{figure/UPCLogo.png}
 	\def\UPC@titlelength{12em}
 	\def\UPC@titlelinefont{}
 	\maketitlearg{#1}
@@ -762,8 +763,8 @@
 
 % 设置参考文献样式
 \IfStrEqCase{\UPC@citebst}{
-	{gbt7714-2005}{\bibliographystyle{gbt7714-2005}}
-	{gbt7714-2015}{\bibliographystyle{gbt7714-2015}}
+	{gbt7714-2005}{\bibliographystyle{ref/gbt7714-2005}}
+	{gbt7714-2015}{\bibliographystyle{ref/gbt7714-2015}}
 	{thuthesis}{
 		\bibliographystyle{thuthesis}
 		\def\thudot{\unskip.}

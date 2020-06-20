@@ -1,23 +1,38 @@
+%%% 产生一段随机文本的宏包
 \usepackage{lipsum}
+
 \usepackage{makecell}
+%%% 数学环境？
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts,amssymb}
+
+%%% 子图
 \usepackage{subfigure}
+
+%%% 列表环境
 \usepackage{enumerate}
+%%% 图片环境
 \usepackage{graphicx}
-\usepackage{epstopdf}
+
+%%%暂时没发现有什么用，注释掉
+% \usepackage{epstopdf}
 \usepackage{etoolbox}
 \usepackage{titlesec}
 \usepackage{tocloft}
 
+%%%交叉引用宏包
+\usepackage{hyperref}
+%%%跨文件交叉引用的宏包
+\usepackage{xr}
+
+%%% 定义定理环境的宏包
 \usepackage{amsthm}
-
-
 
 % \def\entheorem{} %%%%%将此行取消注释以切换为英文定理环境
 
-
+% 取消空白页的页眉页脚
+\usepackage{emptypage}
 
 %%%%%中英定理类环境的声明
 %%%%%---------------------------------------------------------------------
