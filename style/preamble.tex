@@ -184,3 +184,48 @@
 %%%%%貌似是数学公式从每个章节（section）重新开始编号
 \@addtoreset{equation}{section}
 
+
+
+
+%%%%%---------------------------------------------------------------------
+
+% 单双面打印控制
+
+\ifx \twoSidePrint \undefined
+    \def \ClearPageStyle{\clearpage}
+\else
+    \def \ClearPageStyle{
+    		\clearpage
+	    	\thispagestyle{empty}
+	    	\quad
+	    	\clearpage
+    }
+\fi
+
+\newcounter{startpage}
+\newcounter{endpage}
+\setcounter{startpage}{1}
+\setcounter{endpage}{1}
+
+\newenvironment{PrintMode}{
+	\clearpage
+	\setcounter{startpage}{\value{page}}
+
+
+}{	
+	\clearpage
+	\setcounter{endpage}{\value{page}}
+	% \thestartpage
+	% \theendpage
+	\addtocounter{endpage}{\value{startpage}}
+
+	\ifodd \value{endpage}
+		\ClearPageStyle
+		\ifx \twoSidePrint \undefined
+		\else
+			\addtocounter{page}{-1} % 如果环境内补了一页空白页，将实际页码减一
+		\fi
+	\fi
+
+
+}

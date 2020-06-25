@@ -2,6 +2,13 @@
 
 
 \documentclass[supercite,fontset=windows]{upcthesis}
+
+
+
+% \def \twoSidePrint{} %双面打印时取消注释以在特定位置加入空白页
+
+
+
 %导言区设置
 \input{style/preamble}
 
@@ -23,14 +30,28 @@
 \begin{document}
 % 封面页
 \maketitle
+\ClearPageStyle
 
 
 % 中英摘要页
 \input{sections/before/cnabstract}
+\ClearPageStyle
+
 \input{sections/before/enabstract}
+\ClearPageStyle
+
 
 % 目录页
 \tableofcontents
+\ClearPageStyle
+
+
+
+% 防止添加空白页导致的页码出错
+\setcounter{page}{1}
+
+
+
 
 %% 测试用
 \input{sections/test/example}
@@ -43,10 +64,17 @@
 % \input{sections/body/section3}
 % \input{sections/body/section4}
 
+\begin{PrintMode}
 % 感谢页
 \input{sections/after/thankpage}
+\end{PrintMode}
+
+
+\begin{PrintMode}
 % 参考文献页
-\input{sections/after/reference}
+\input{sections/after/reference}	
+\end{PrintMode}
+
 
 %%%%%%%%附录，不需要的同学可以注释此部分
 \input{sections/after/appendix}
