@@ -1,0 +1,66 @@
+
+\section{实验及结果分析}
+例如由于起初未能真正掌握各种控件的功能，我设想是要一个下拉菜单，但是学识肤浅的我试了很多种就是达不到我要的效果，……。
+
+……
+
+关于……的影响如表\ref{data_table}所示。
+
+……
+
+\begin{table}[htbp]
+        \small
+        \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+        \centering
+        \caption{激光入射功率密度对导轨滚道表面硬化层深和显微硬度的影响}
+        \begin{tabular}{ccccc}
+                \toprule
+                试验编号 & 功率密度 & 辐照时间 & 显微硬度       & 硬化层深\\ \midrule
+                t-1	&6.37×103	&0.067	&570，456	&0.354\\
+                t-2	&6.37×103	&0.067	&570，456	&0.354\\
+                t-3	&6.37×103	&0.067	&570，456	&0.354\\
+                t-4	&6.37×103	&0.067	&570，456	&0.354\\
+                t-5	&6.37×103	&0.067	&570，456	&0.354\\ \bottomrule
+        \end{tabular}
+        \label{data_table}
+\end{table}
+
+
+鉴于表格复杂性，此处提供了可换行示例表见表\ref{kehuanhang}
+\begin{table}[htbp]
+        \small
+        \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+        \centering
+        \caption{可换行示例表}
+        \begin{tabular}{ccc}
+                \toprule
+                1	& 2& 3\\ \midrule
+                1&\tabincell{c}{3}&6\\
+                1&\tabincell{c}{3}&6\\
+                \tabincell{c}{2}&\tabincell{c}{4444444444\\5555555555}&\tabincell{c}{6}
+                \\ \bottomrule
+        \end{tabular}
+        \label{kehuanhang}
+        \vspace{0.5em}
+\end{table}
+
+此处也提供了多列合并示例表如表\ref{duoliehebing}
+\begin{table}[htbp]
+        \small
+        \centering
+        \caption{多列合并示例表}
+        \begin{tabular}{ccccccccc}
+                \toprule
+                & \multicolumn{2}{c}{ZZ}& \multicolumn{6}{c}{XX}\\
+                \cmidrule(lr){2-3} \cmidrule(lr){4-9}
+                &   &   & \multicolumn{2}{c}{CC}&\multicolumn{4}{c}{VV}\\
+                \cmidrule(lr){4-5} \cmidrule(lr){6-9}
+                &   &   &   &   & \multicolumn{3}{c}{BB}&NN\\
+                \cmidrule(lr){6-8} \cmidrule(lr){9-9}
+                & A &S	&D &F &G &H &J &K \\ \midrule
+                Q&$\surd$&$\surd$&   &   &   &    & &\\
+                T&	&		& $\surd$ & $\surd$   &   &  &$\surd$     &\\
+                Y&	&		& $\surd$ & $\surd$   &   &  &    &$\surd$ \\ \bottomrule
+        \end{tabular}
+        \label{duoliehebing}
+\end{table}

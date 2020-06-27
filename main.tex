@@ -1,21 +1,19 @@
-% 这是整个论文的主控文件
-
 
 \documentclass[supercite,fontset=windows]{upcthesis}
 
-
-
-% \def \twoSidePrint{} %双面打印时取消注释以在特定位置加入空白页
-
-
+% \def \twoSidePrint{} %取消此行注释以获得双面打印效果。会在特定位置添加空白页
 
 %导言区设置
 \input{style/preamble}
 
 
+
+
+
+
 % 封面各项参数
 \makeatother
-\title{线性表的设计和实现实现实现实现实现}
+\title{线性表的设计和实现}
 % \subtitle{这是副标题}
 % \ensubtitle{This is EnSubTitle}
 \entitle{The design and implementation of the linear form}
@@ -28,55 +26,79 @@
 
 
 \begin{document}
+
+
 % 封面页
 \maketitle
 \ClearPageStyle
 
-
-% 中英摘要页
+% 中文摘要
 \input{sections/before/cnabstract}
 \ClearPageStyle
 
+% 英文摘要
 \input{sections/before/enabstract}
 \ClearPageStyle
 
 
 % 目录页
 \tableofcontents
-\ClearPageStyle
+
+\ClearPageStyle   % 如果你的目录总页数是偶数，注释掉这一行。否则双面打印时正文的第一页会是空白页
 
 
 
 % 防止添加空白页导致的页码出错
 \setcounter{page}{1}
 
+%%%%%---------------------------------------------------------------------
+% 正文从这里开始
 
 
 
-%% 测试用
-\input{sections/test/example}
-% \input{sections/test/test}			
+%%% 测试用，写自己的伦文时注释这里
+\PrintModeInput{sections/test/examplesec1.tex}
+\PrintModeInput{sections/test/examplesec2.tex}
+\PrintModeInput{sections/test/examplesec3.tex}
+\PrintModeInput{sections/test/examplesec4.tex}
+\PrintModeInput{sections/test/examplesec5.tex}
+
+%%%%%---------------
+%%% 测试各种环境，写自己的伦文时注释这里
+\PrintModeInput{sections/test/test.tex}
+
+%%%%%---------------
+%%% 使用手册，请认真阅读。写自己的伦文时注释这里
 
 
-% % 你的章节，按需要取消注释
-% \input{sections/body/section1}
-% \input{sections/body/section2}
-% \input{sections/body/section3}
-% \input{sections/body/section4}
+% \PrintModeInput{sections/manual/section1.tex}
+% \PrintModeInput{sections/manual/section2.tex}
+% \PrintModeInput{sections/manual/section3.tex}
+% \PrintModeInput{sections/manual/section4.tex}
+% \PrintModeInput{sections/manual/section5.tex}
 
-\begin{PrintMode}
+
+%%%%%---------------
+
+%%% 你的章节，使用时按需要取消注释
+% \PrintModeInput{sections/body/section1.tex}
+% \PrintModeInput{sections/body/section2.tex}
+% \PrintModeInput{sections/body/section3.tex}
+% \PrintModeInput{sections/body/section4.tex}
+% \PrintModeInput{sections/body/section5.tex}
+
+
+
+
+%%%%%---------------------------------------------------------------------
+
 % 感谢页
-\input{sections/after/thankpage}
-\end{PrintMode}
+\PrintModeInput{sections/after/thankpage}
 
-
-\begin{PrintMode}
 % 参考文献页
-\input{sections/after/reference}	
-\end{PrintMode}
-
+\PrintModeInput{sections/after/reference}	
 
 %%%%%%%%附录，不需要的同学可以注释此部分
-\input{sections/after/appendix}
+\PrintModeInput{sections/after/appendix}
 
 \end{document}
