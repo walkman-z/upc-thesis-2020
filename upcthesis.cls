@@ -763,8 +763,8 @@
 
 % 设置参考文献样式
 \IfStrEqCase{\UPC@citebst}{
-	{gbt7714-2005}{\bibliographystyle{ref/gbt7714-2005}}
-	{gbt7714-2015}{\bibliographystyle{ref/gbt7714-2015}}
+	{gbt7714-2005}{\bibliographystyle{style/gbt7714-2005}}
+	{gbt7714-2015}{\bibliographystyle{style/gbt7714-2015}}
 	{thuthesis}{
 		\bibliographystyle{thuthesis}
 		\def\thudot{\unskip.}
