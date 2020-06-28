@@ -81,7 +81,7 @@
 \LoadClass[a4paper]{article}
 % AutoFakeBold 表示伪粗的粗度
 
-\RequirePackage[AutoFakeBold=1.28, AutoFakeSlant=true]{xeCJK}[2017/08/08]
+\RequirePackage[AutoFakeBold=2.5, AutoFakeSlant=true]{xeCJK}[2017/08/08]
 \RequirePackage[zihao=-4, UTF8, heading=true\UPC@fontset]{ctex}[2016/12/27]
 
 %-----------------
@@ -405,7 +405,7 @@
 				\vspace*{36pt}
 				
 				\begin{flushleft}
-				\hspace{0.8em}\zihao{-2} \heiti \makebox[15cm]{题\hspace{0.8em}目\textbf{：}\parbox[h][1em][l]{13.5cm}{\@title}} 
+				\hspace{0.8em}\zihao{-2} \heiti \makebox[25em]{题\hspace{0.8em}目\textbf{：}\parbox[h][1em][l]{13cm}{\@title}} 
 				\end{flushleft}
 				\makebox[\textwidth][r]{\heiti \zihao{-2} \@subtitle}
 %				\vspace{9.7em}
@@ -521,7 +521,7 @@
 %	\addcontentsline{toc}{section}{摘要}
 	\begin{center}
 		\vspace*{1em}
-		\parbox[h][1em][c]{\textwidth}{\heiti \bfseries \zihao{-2} \vspace*{0.5em} 
+		\parbox[h][1em][c]{\textwidth}{\heiti \zihao{-2} \vspace*{0.5em} 
 		\begin{center}\@title\end{center}
 		\vspace{0.5em}}\\
 		\StrLen{\@subtitle}[\SubTitleLen]
