@@ -1,27 +1,23 @@
 
 * 中国石油大学(华东)本科毕业设计论文LaTeX模板2020
 
-这个项目是中国石油大学(华东)2020本科毕业设计论文word模板的LaTex版。
+此模板是中国石油大学(华东)2020本科毕业设计论文word模板的LaTex实现，欢迎使用
 
 
 
-本项目的目的在于借助用LaTeX写论文时内容与样式分离的特性，为同学们打造简单、易用、专注于内容的论文写作模板。节省同学们的工作量和时间。
+本项目的目的在于借助用LaTeX写论文时内容与样式分离的特性，为同学们打造简单、易用、专注于内容的论文写作模板，节省同学们的工作量和时间。
 当然，如果你之前从未使用过LaTex，你会需要一些时间来了解这个工具和配置工作环境。
 
-使用此模板的过程中，比较简单的问题可以在qq群1105166609中互助解决。如果模板中出现错误，或者缺乏你需要的功能，请在[[https://github.com/walkman-z/upc-thesis-2020/
-issues][walkman-z/upc-thesis-2020]]上提交issue。
+使用此模板的过程中，比较简单的问题可以在qq群1105166609中互助解决。如果模板中出现错误，或者缺乏你需要的功能，请在[[https://github.com/walkman-z/upc-thesis-2020/issues][walkman-z/upc-thesis-2020]]上提交issue。
 
-如果我的工作节省了你的工作量和时间，请向你的同学，老师，以及学弟学妹们推荐此模板。
+** 为什么选择LaTex
 
++ 稳定、精确、美观的打印效果。基本没有bug和兼容性问题
++ 易用、全面的数学排版支持。这对论文中有大量数学公式的同学尤为重要。
++ 内容与样式分离。模板的使用者基本只需要关注论文的内容。省心省力。
++ 跨平台、免费。当然这只是次要的。
++ 提前掌握。如果你在未来要投身科研事业，学会使用Latex也是很重要的。
 
-** 为什么使用LaTex写论文？
-
-
-Latex的优点在于 
-+ 跨平台、免费、开源
-+ 稳定、精确、美观
-+ 易用、全面的数学排版支持。
-+ 让你专注于内容的写作
 
 
 
@@ -29,7 +25,7 @@ Latex的优点在于
 
 LaTex的源文件是一系列纯文本文件，你可以在你喜欢的任何文本编辑器中编写你的源文件。主流的文本编辑器都对LaTeX有着完善丰富的插件支持。
 
-常见的Latex工作环境有
+常见的Latex编辑器有
 
 + texworks 安装texlive时自带。
 + sublimetext3 简单易用，比较推荐。
@@ -47,9 +43,10 @@ LaTex的源文件是一系列纯文本文件，你可以在你喜欢的任何文
 + 实时的公式显示
 + tex文件和pdf文件的正、反向搜索
 + 快速的搜索\替换功能
++ 快速注释
 
 
-这里推荐大家使用sublimetext3加插件配合sumatra PDF阅读器的方式。
+我比较常用的是sublimetext3加插件配合sumatra PDF阅读器的方式。
 需要的插件有
 + LaTeXtools
 + LaTeXXYZ
@@ -58,17 +55,28 @@ LaTex的源文件是一系列纯文本文件，你可以在你喜欢的任何文
 
 一些写论文时可能会用到的网站和工具：
 
+
+
 如果你不想记大量的LaTeX数学命令，或者你有一些又臭又长的公式，你可以在网站[[https://www.latexlive.com/][latexlive]]上以类似word的公式编辑器一样的方式。这个网站还具有许多其他功能，如将公式输出为图片，输出公式到Word，手写公式识别，图片公式识别（写文献翻译必备）等。
 
-知网英文版
-知网上下载文献很多时候只能下载caj格式，但如果你设置知网语言为英文，就可以直接下载文献的PDF版。
+手动写Latex的表格也是比较麻烦的事情，你可以在[[https://www.tablesgenerator.com/][tablesgenerator]]上粘贴你Excel中的数据来直接生成Latex的表格代码。
 
-另外，基本上百分之九十的英文文献都可以在scihub上免费下载，请自行搜索网址和使用方法。
+
+
+从学校的[[https://wvpn.upc.edu.cn/][webvpn]]入口访问知网可以免费下载文献。但是很多时候只能下载caj格式，如果你设置知网语言为英文，就可以直接下载文献的PDF版。
+
+
+一些常见的搜索外文文献站点：
+[[https://www.springer.com/cn][springer]]
+[[https://www.sciencedirect.com/][Elsevier]]
+[[https://ieeexplore.ieee.org/Xplore/home.jsp][IEEE Xplore]]
+
+在上述网站搜索到你需要的文献的网址或doi后，基本上都可以在网站[[https://sci-hub.tw/][sci-hub]]上免费获取。这个网站的域名经常变动，使用前请自行搜索使用方法和最新的域名。
 
 
 
 ** 模板使用指南
-请参见主文件中的内容
+请参见主文件中manual的内容
 
 ** 工作内容
 *** 已解决的问题
@@ -88,8 +96,16 @@ LaTex的源文件是一系列纯文本文件，你可以在你喜欢的任何文
 + 各种代码类环境的实现
 + 考虑使用纯英文写毕业论文的兼容性
 + 暂时设置为手动引用参考文献，未来将实现bib引用参考文献的样式
++ 写使用手册
 
 
 ** 模板历史及感谢
 
-本模板的主要代码来自于[[https://github.com/DotWang/UPCThesis_advanced/commits/master][DotWang/UPCThesis_advanced]]。
+本模板的主要代码来自于[[https://github.com/DotWang][DotWang]]学长的 [[https://github.com/DotWang/UPCThesis_advanced/commits/master][UPCThesis_advanced]] 。
+该项目修改自[[https://github.com/UPCLaTeX][UPCThesis]] 学长的 [[https://github.com/UPCLaTeX/UPCThesis][UPCThesis]]。
+上项目又fork自 [[https://github.com/skinaze][skinaze]] 的 [[https://github.com/skinaze/HUSTPaperTemp][华中科技大学本科毕业论文LaTeX模板]]。
+在此，对各位前辈表示感谢。
+
+另外，此模板的修改过程中参照了许多其他学校的官方模板。就不再一一致谢了。
+
+** License
