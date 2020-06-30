@@ -91,7 +91,52 @@ LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平�
 
 
 ** 模板使用指南
-请在主文件main.tex中编译manual文件夹内的章节。
+文件目录结构：
+
+.
+├── 2020新格式-数学与信息专业--毕业设计模板.doc //Word模板参考
+├── figure  //图片文件夹
+│   ├── guozuni.png
+│   └── UPCLogo.png  //学校logo
+├── main.pdf
+├── main.tex  //主控文件
+├── README.org
+├── ref   //引用文件
+│   └── bibliography.bib
+├── sections  //章节代码存放位置
+│   ├── after  //论文后文部分
+│   │   ├── appendix.tex  //附录
+│   │   ├── reference.tex  //参考文献页
+│   │   └── thankpage.tex  //致谢
+│   ├── before  //论文前文部分
+│   │   ├── cnabstract.tex  //中文摘要
+│   │   └── enabstract.tex  //英文摘要
+│   ├── body  //论文主体部分
+│   │   ├── section1.tex
+│   │   ├── section2.tex
+│   │   ├── section3.tex
+│   │   ├── section4.tex
+│   │   └── section5.tex
+│   ├── manual  //模板使用手册
+│   │   ├── section1.tex
+│   │   ├── section2.tex
+│   │   ├── section3.tex
+│   │   ├── section4.tex
+│   │   └── section5.tex
+│   └── test  //复刻word模板，查看效果
+│       ├── examplesec1.tex
+│       ├── examplesec2.tex
+│       ├── examplesec3.tex
+│       ├── examplesec4.tex
+│       ├── examplesec5.tex
+│       └── test.tex  //测试各种环境
+├── style
+│   ├── gbt7714-2005.bst  //bib引用样式
+│   ├── gbt7714-2015.bst
+│   └── preamble.tex  //导言区设置
+└── upcthesis.cls  //文档类文件
+
+*请在主文件main.tex中编译manual文件夹内的章节来查看使用说明。*
 
 ** 工作内容
 *** 已解决的问题
