@@ -22,22 +22,23 @@
 
 首先你需要安装 Latex环境。
 
-LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平台且易于安装。你可以在[清华镜像站](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)下载最新的TeXLive2020的iso镜像文件。下载后，打开镜像并点击nstall-tl-windows.bat文件即可开始安装。
+LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平台且易于安装。你可以在[清华镜像站](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)下载最新的TeXLive2020的iso镜像文件。下载后，windows上打开镜像并点击install-tl-windows.bat文件即可开始安装，linux下打开镜像后在终端下进入文件夹，输入sudo ./install-tl。
 
 
 由于LaTex的源文件是一系列纯文本文件，你可以在你喜欢的任何文本编辑器中编写它们。主流的文本编辑器都对LaTeX有着完善丰富的插件支持。
 
 常见的Latex编辑器方案有
 
-+ texworks 安装texlive时自带。
-+ texstudio 挺好用。
-+ overleaf 网上latex编辑环境，不需要在本地安装tex环境，需要网络。
-+ sublimetext3 插件LaTeXtools提供的公式预览的功能挺不错。
-+ VScode 没试过，似乎功能很丰富。
-+ atom 没试过。
-+ emacs 古老的编辑器，很难上手，但配置好后效率极高。
++ texworks 安装texlive时自带，基本不需要配置。
++ texstudio 集成了需要的功能，基本不需要配置。
++ overleaf 网上latex编辑环境，不需要在本地安装tex环境，需要网络，不需要配置。
++ sublimetext3 插件LaTeXtools提供的公式预览的功能挺不错。需要配置插件。见[这篇](https://www.latexstudio.net/archives/51449.html)教程。
++ VScode 没试过，似乎功能很丰富。需要配置插件。
++ atom 没试过。需要配置插件。
++ emacs 很难上手，但配置好后效率极高。需要配置插件。可以看B站的[这个](https://www.bilibili.com/video/BV17W411k7w2)教程。
 + vim 同上。
 
+我比较常用的是sublimetext3和emacs，同学们可以自己的喜好选择。
 
 要高效率的使用latex写论文，以下几个功能我认为是不可或缺的
 
@@ -50,21 +51,10 @@ LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平�
 + 快速注释
 
 
-我比较常用的是sublimetext3和emacs这两种，其他的方案用的不多，同学们可以选择自己喜欢的编辑器。
-
-
-配置sublimetext3中latex编辑环境需要的插件有
-
-+ LaTeXtools
-+ LaTeXXYZ
-+ LaTeX-cwl
-  还需要安装sumatra pdf阅读器并配置反向搜索来配合使用。
-
-在网上搜索"sublimtext3 latex"就可以找到许多配置教程。在这里就不赘述了。
 
 一些写论文时可能会用到的网站和工具：
 
-如果你不想记大量的LaTeX数学命令，或者你有一些又臭又长的公式，你可以在网站[latexlive](https://www.latexlive.com/)上以类似word的公式编辑器一样的方式来打出公式。这个网站还具有许多其他很有用的功能，如将公式输出为图片，输出公式到Word，手写公式识别，图片公式识别（写文献翻译必备）等。
+如果你不想记大量的LaTeX数学命令，或者你有一些又臭又长的公式，你可以在网站[latexlive](https://www.latexlive.com/)上以类似word的公式编辑器一样的方式来打出公式。这个网站还具有许多其他很有用的功能，如将公式输出为图片，导出公式到Word，手写公式识别，图片公式识别（写文献翻译必备）等。
 
 手动写Latex的表格也是比较麻烦的事情，你可以在[tablesgenerator](https://www.tablesgenerator.com/)上粘贴你Excel或word表格中的数据来直接生成Latex的表格代码。
 
@@ -88,7 +78,7 @@ LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平�
 
 文件目录结构：
 
-.
+.  
 ├── 2020新格式-数学与信息专业--毕业设计模板.doc //Word模板参考  
 ├── figure  //图片文件夹  
 │   ├── guozuni.png  
@@ -129,7 +119,7 @@ LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平�
 │   ├── gbt7714-2005.bst  //bib引用样式  
 │   ├── gbt7714-2015.bst  
 │   └── preamble.tex  //导言区设置  
-└── upcthesis.cls  //文档类文件    
+└── upcthesis.cls  //文档类文件           
 
 **请在主文件main.tex中编译manual文件夹内的章节来查看使用说明**。
 
@@ -148,19 +138,20 @@ LaTeX有着TeXLive/MiKTeX/MacTex等多种实现。推荐使用TeXLive，跨平�
 
 ### 解决中的问题
 
-+ 实现可换页的长表格和长公式环境
-+ 完善README
-+ 写manual
++ 实现可换页的长表格和长公式环境。
++ 完善README。
++ 写manual。
 
 ### 拟解决的问题
 
-+ 各种代码类环境的实现
-+ 兼容纯英文毕业论文
-+ 暂时设置为手动引用参考文献，未来将实现bib引用参考文献的样式
++ 各种代码类环境的实现。
++ 兼容纯英文毕业论文。
++ 暂时设置为手动引用参考文献，未来将实现bib引用参考文献的样式。
++ 分离封面页，并提供外文文翻译、开题报告的模板。
 
 ## 模板历史及感谢
 
-本模板的主要代码来自于[DotWang](https://github.com/DotWang)学长的 [UPCThesis_advanced](https://github.com/DotWang/UPCThesis_advanced/commits/master) 。
+本模板的主要代码来自于[DotWang](https://github.com/DotWang)学长的 [UPCThesis_advanced](https://github.com/DotWang/UPCThesis_advanced/commits/master) 。    
 
 该项目修改自[UPCThesis](https://github.com/UPCLaTeX) 学长的 [UPCThesis](https://github.com/UPCLaTeX/UPCThesis)。
 

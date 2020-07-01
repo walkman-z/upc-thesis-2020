@@ -572,12 +572,7 @@
 %----------------------
 \RequirePackage[titles,subfigure]{tocloft}
 \RequirePackage[colorlinks,citecolor=black]{hyperref}
-\hypersetup{
-	colorlinks = true,
-	linkcolor  = black,
-	pdfborder =000, %去掉链接红(黑)框
-	pdfstartview=FitH	%打开页面以窗口宽度显示
-}
+
 \renewcommand{\cfttoctitlefont}{\hfill \heiti \zihao{-2} \bfseries}
 \renewcommand{\contentsname}{目\hspace{1.5em}录}
 \renewcommand{\cftaftertoctitle}{\hfill}
