@@ -1,0 +1,64 @@
+# .gitignore file for LyX and LaTeX projects 
+
+# Ignore everything in the tests and old  directories
+# where experimental and outdated stuff are storaged
+tests
+old
+
+# Ignore swap files
+.*.swp
+
+# Ignore all the output  files (dvi or pdf)
+#*.pdf
+#*.dvi
+
+# Ignore standard latex's compilation files
+*.out
+*.log
+*.aux
+
+# Ignore TexMaker compilation files
+*.synctex.gz
+
+# Ignore JabRef bkup files
+*.bib.bak
+.$*.bib$
+
+# ingnore lyx VCS files and backups
+\#*.lyx\#
+*.lyx,v
+*.lyx~
+
+# LaTeX gitignore from github:
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+*.xdv
+*.fls
+*.fdb_latexmk
+
+# Ignore dropbox config files
+.dropbox
+
+2020新格式-数学与信息专业--毕业设计模板.pdf
+README.org
