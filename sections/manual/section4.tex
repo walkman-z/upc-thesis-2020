@@ -1,5 +1,28 @@
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+\begin{document}
+
+
+
 \section{结构化编写}
-在用LaTeX写论文时，当论文比较长时，把所有章节都放在主文件里就不再是一个明智的选择了。太长的主文件会显得冗长臃肿，降低阅读效率。因此本模板将整个文档按章节分割，你可以先在主文件里编写一个章节（方便正向查找，以实时校对输出的pdf内容），写的差不多了之后再放进章节文件内。
 
-注意，放进章节文件后无法实现正向查找，但反向搜索还是能用的。你可以按需要编译章节，
+为了使论文的组织结构清晰明确，本模板实现了论文的分章节编译，你可以在每个单章的文件中编写内容并输出为pdf文件。
+当每个章节都编写完成后，在main.tex中组织和编译它们来得到完整的论文。
 
+
+
+
+需要注意的部分：
+在对单章进行编译时，\textbf{跨文件}的交叉引用是失效的。不过只要你引用的标签是正确的，忽略产生的“There were undefined references.”警告即可，因为在主文件main.tex中编译时交叉引用就会恢复正常。
+
+导入图片时最好使用绝对路径，这样能保证子文件和主文件在编译时都能找到对应的图片。而图片文件夹figure对于子文件和主文件的相对位置是不同的。
+
+
+\end{document}

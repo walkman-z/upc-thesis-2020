@@ -1,31 +1,37 @@
-
 % 子文件在单独编译时会报
 % “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
 % 的警告，其实并没有什么影响，忽略即可
 \documentclass[supercite,fontset=windows]{../../upcthesis}
 \ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
 \input{../../style/preamble}
-\entitle{don't care about this title :)}
 \fi
 % 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
 
-
-
 \begin{document}
 
-%单个编译此文件时标题不对属于正常现象，不用在意
 
-\begin{enabstract}{Write Criterion；Typeset Format；Graduation Project (Thesis)；Keyword One；Keyword Two；Keyword Newline}
-\lipsum[10]
-\end{enabstract}
-
+\section{审阅}
+当你进行到了论文的最终阶段，会需要和你的导师进行频繁的交流来对
+论文进行修改。pdf文件的批注功能弱于word的审阅功能。
 
 
+使用宏包changes可以实现简单的修改注解。
+
+
+标志更改者
+
+\added{添加文本}
+\deleted{删除文本}
+\highlight{高亮文本}
+\replaced{替换文本}{被替换文本}
+
+
+列出变动内容
+%\listofchanges[style=compactsummary]
 
 
 
 
 \end{document}
-
 
 

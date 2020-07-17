@@ -1,3 +1,16 @@
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+\begin{document}
+
+
+
 \section{交叉引用}
 
 \subsection{参考文献的引用}
@@ -13,6 +26,6 @@
 
 \subsection{内容的引用}
 
+通过\verb|\label|和\verb|\autoref|这两个命令来完成论文中元素的标记和引用。
 
-
-label 和 ref
+\end{document}

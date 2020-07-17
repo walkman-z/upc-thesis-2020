@@ -1,4 +1,35 @@
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+\begin{document}
+
+
 \section{模板功能}
+\subsection{打印模式}
+论文答辩时需要准备三份纸质论文，而纸质论文都是双面打印。我们的论文都是单面排版的，打印的时候就需要在特定的位置加入空白页。
+
+我们当时的要求是：在封面，中英摘要，目录，致谢，参考文献后添加空白页，并且空白页的位置必须是
+\textbf{实际页码}的偶数页。纸质版论文除了空白页外其他部分与电子版论文完全一致。
 
 
-打印模式
+本模板中暂时按此要求实现了双面打印宏\verb| \twoSidePrint{} |，定义在
+在main.tex中导言区的位置，将其取消注释后编译即可获得双面打印效果支持，在需要的位置自动插入空白页。
+如果后续要求变更，再按照实际的要求进行修改。
+
+具体实现的命令和行为：
+
+\verb|\ClearPageStyle|命令，若\verb|\twoSidePrint{} |未定义，无任何影响，否则添加空白页。用在无页码的封面页、中英摘要页、目录页之后。
+
+\verb|\PrintModeSubfile|环境，若\verb|\twoSidePrint{} |未定义，仅导入一子文件，否则导入子文件后根据起始页码与结束页码判断此子文件的页数，若为奇数，添加一空白页，并且空白页不会编页，页码仍与单面打印时保持一致。直接作用在章节的导入过程。
+
+
+注意事项：
+一般来说，中英摘要都只有一页，目录可能会有多页。如果中英摘要或目录的页数是偶数，如2页或4页，\verb|\ClearPageStyle|命令插入的空白页就会成为多余的。这时你需要手动将它注释掉来去掉这一多余的空白页，达到你实际想要的打印效果。
+
+\end{document}

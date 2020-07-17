@@ -21,16 +21,20 @@
 % \usepackage{epstopdf}
 \usepackage{etoolbox}
 \usepackage{titlesec}
-\usepackage{tocloft}
+
+
+% \usepackage{tocloft}
 
 
 %%% 令长表格自动换页的宏包
 \usepackage{longtable}
 
+
+\usepackage{subfiles}
 %%% 定义定理环境的宏包
 \usepackage{amsthm}
-
-
+%%%审阅功能
+\usepackage{changes}
 %%%交叉引用宏包，要放在最后引入
 \usepackage{hyperref}
 
@@ -87,7 +91,7 @@
 
 
 
-%%%%%貌似是数学公式从每个章节（section）重新开始编号
+%%%%貌似是数学公式从每个章节（section）重新开始编号
 \@addtoreset{equation}{section}
 
 
@@ -114,7 +118,7 @@
 % 应用定理样式
 \theoremstyle{thesty}
 
-\ifx\entheorem\undefined
+\ifx\enEnvironment\undefined
 % 中文定理环境
 {
 	\newtheorem{definition}{定义}[section]
@@ -245,7 +249,7 @@
 
 }
 
-\newcommand \PrintModeInput[1]{\begin{PrintMode}\input{#1}\end{PrintMode}}
+\newcommand \PrintModeSubfile[1]{\begin{PrintMode}\subfile{#1}\end{PrintMode}}
 
 	
 

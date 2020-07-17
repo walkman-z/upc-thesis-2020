@@ -1,8 +1,36 @@
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
 
+\title{不要在意这个标题 :)}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+
+
+
+\begin{document}
+
+
+
+%单个编译此文件时标题不对属于正常现象，不用在意
 
 
 \begin{cnabstract}{数据结构；面向对象；可视化；算法；关键字1；关键字2；关键字3；需要换行的关键字}
 结构算法设计和演示（C++）树和查找是在面向对象思想和技术的指导下，采用面向对象的编程语言（C++）和面向对象的编程工具（Borland C++ Builder 6.0）开发出来的小型应用程序。它的功能主要是将数据结构中链表、栈、队列、树、查找、图和排序部分的典型算法和数据结构用面向对象的方法封装成类，并通过类的对外接口和对象之间的消息传递来实现这些算法，同时利用C++ Builder 6.0中丰富的控件资源和系统资源对算法实现过程的流程和特性加以动态的演示，从而起到在数据结构教学中帮助理解、辅助教学和自我学习的作用。
 \end{cnabstract}
+
+
+
+
+
+
+
+\end{document}
+
+
 
 

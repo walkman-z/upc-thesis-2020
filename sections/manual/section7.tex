@@ -1,0 +1,85 @@
+
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+\begin{document}
+
+
+\section{自定义简单宏}
+论文中一般会频繁的出现一些较长的符号或专有名词，用简单的宏命令就可以方便的进行输入和全局修改。
+这有点像C语言里面的宏，LaTeX编译器会使用命令中定义的文本内容代替实际的命令。
+
+定义新的宏命令的方法：
+
+\begin{verbatim}
+\newcommand{commandName}[argumrntNum]{def}
+\end{verbatim}
+
+commandName是定义的新命令的名字，使用时以反斜线开头，区分大小写，可以使用汉字,
+不能和LaTeX中自带的和模板中已经定义的命令名重复。
+
+注意由于命令的名字可以是汉字，像
+\begin{verbatim}
+	\par一些文字
+\end{verbatim}
+这样的命令会出现“Undefined control sequence”错误，因为编译器将命令\verb|\par|后面的汉字也识别为变量名的一部分。为了避免这种情况，应该像
+\begin{verbatim}
+	\par 一些文字
+\end{verbatim}
+这样，用空格将命令和文本分开。
+
+方括号中的arguumentNum是传入参数的个数，必须为数字，最大为9。如果不需要传参数，不写方括号即可。
+
+def是宏的内容，传入的参数可以在内容中使用\verb|#1,#2,|$\cdots$,\verb|#9|来表示和区分。
+
+简单的例子：
+
+\begin{verbatim}
+一个无参的例子：
+\newcommand{vga}{VGA（Video Graphics Array）视频图形阵列}
+
+
+2个参数的情况：
+\newcommand{\ffield}[2]{有限域$\mathbf{\mathbb{#1}}_{#2}$}
+命令的使用：
+\ffield{F}{q}
+\ffield{G}{a}
+
+\end{verbatim}
+
+产生的效果如下：
+\newcommand{\ffield}[2]{有限域$\mathbf{\mathbb{#1}}_{#2}$}
+
+\ffield{F}{q}
+
+\ffield{G}{a}
+
+
+
+
+建议把自定义的简单宏都放在导言区进行统一管理，不要到处乱放，以免造成混乱。
+模板中提供的一些简单宏命令：
+
+字体命令
+
+文本
+
+
+\verb|\mathbf{}| 公式环境内的粗体
+\verb|\textbf{}| 文本的粗体
+\verb|\emph{}| 斜体强调
+\verb|\hspace{1em}| 产生一段横向的空白，长度为当前字号下一个字符"m"的宽度。
+\verb|\vspace{1em} |产生一段纵向的空白，长度为当前字号下一个字符"m"的高度。
+一些常用的特殊字符被LaTeX作为控制字符，如果要实际的打印出他们，需要使用反斜杠\verb|\|进行转义。特殊字符包括\verb|\,#,%,$,&,_,^,{,},~|等。
+
+
+
+
+
+\end{document}

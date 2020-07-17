@@ -1,58 +1,130 @@
-\section{数学环境}
+% 子文件在单独编译时会报
+% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
+% 的警告，其实并没有什么影响，忽略即可
+\documentclass[supercite,fontset=windows]{../../upcthesis}
+\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
+\input{../../style/preamble}
+\fi
+% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+
+\begin{document}
+
+
+\section{基础知识}
+\subsection{运行latex}
+安装好texlive环境后，使用xelatex引擎编译main.tex文件来得到
+\subsection{组织章节、目录}
+一些简单的命令：
 
 
 
-行内公式$E=mc^2$
+\subsection{简单的文本组织}
+
+以符号\verb|%|开头的行是注释。LaTeX会完全忽略百分号后的内容，不使其输出到产生的
+pdf文件中。
 
 
-带编号的行间公式
+latex 会自动对段落进行缩进，并且会忽略掉段前的空格。中文句子中的空格会
+被全部忽略，英文句子中两个单词之间的多个空格会被视为一个空格，多个空
+格也不会加大单词之间的间距。如下所示：
 
-\begin{equation}
-E=mc2
-\end{equation}
+hello         world
 
-不编号的行间公式
+中英文混排时，xelatex 也会自动处理空格。
+
+在latex中，单个换行（回车）其实就相当于一个空格，不会使文字另起一段，而是起使源代码更易阅读的作用。
+使用两个反斜杠\verb|\\|可以换行，但不进行分段，它后面的文字不会有缩进,就像这样：\\
+要另起一段，使用\verb|\par|命令或者连续多次换行（多敲几个回车）。
+
+可以使用命令进行换行，不过不会对下一段进行缩进。
+命令 \par 会进行换行并对下一段缩进。
+
+注意，多个换行只会起到分段作用，不会在文件中输出其他的空白行。这一点与word不同。
+
+
+
+
+
+空白
+hspace
+
+
+
+
+
+\subsection{命令与环境}
+
+
+LaTeX中的控制命令（宏）以反斜线开头，后跟命令名，并且可以传入一些参数。
+用来实现一些强大的功能。
+
+
+
+latex的许多样式依靠环境来实现
+
+
+\subsubsection{公式与定理环境}
+
+行内公式$E=mc^2$ 用两个美元符号将公式内容包裹起来即可
+
+
+带编号的行间公式环境
+
+不编号的行间公式环境
 \[
 e=mc^{2}
 \]
 
+\begin{equation}
+E=mc2
+\end{equation}
+对编号的公式进行引用
+\begin{equation}
+  \label{eq:质能转换方程}
+e=mc^{2}
+\end{equation}
+引用：\autoref{eq:质能转换方程}。
+
+
+
+
+
 定理类环境
 
 \begin{definition}
-这一章是数学环境的使用样例。
+定义环境
 \end{definition}
 
 \begin{theorem}
-这一章是数学环境的使用样例。
+定理环境
 \end{theorem}
 
 
 \begin{lemma}
-这一章是数学环境的使用样例。
+引理环境
 \end{lemma}
 
 
 \begin{proposition}
-这一章是数学环境的使用样例。
-
+命题环境
 \end{proposition}
 
 
 
 \begin{corollary}
-这一章是数学环境的使用样例。
+推论环境
 \end{corollary}
 
 
 \begin{example}
-这一章是数学环境的使用样例。
+例 环境
 \end{example}
 
 
 
 
 \begin{remark}
-这一章是数学环境的使用样例。
+  注环境
 \end{remark}
 
 
@@ -60,12 +132,12 @@ e=mc^{2}
 
 
 \begin{proof}
-这一章是数学环境的使用样例。
+证明环境
 \end{proof}
 
 
 \begin{solution}
-这一章是数学环境的使用样例。
+解环境
 \end{solution}
 
 
@@ -74,7 +146,7 @@ e=mc^{2}
 
   证明可以放进定理类环境里面
 \begin{proof}
-这是证明
+这是证明环境
 \end{proof}
 \end{theorem}
 
@@ -88,26 +160,23 @@ e=mc^{2}
 \end{example}
 
 
-\[
-\left \{
+\subsection{多行公式}
+在行间公式环境中包裹align 环境或 aligned环境，通过符号 来进行换行，符
+号 来进行对齐
+
+\begin{equation}
+  \label{}
 \begin{aligned}
-&\varepsilon \frac{\partial E}{\partial t}=\frac{\partial H}{\partial x},
-E=E\left ( x,t \right ),H=H\left ( x,t \right ),\left ( x,t \right )\in \left [ 0,1 \right ]\times \left[ 0,1 \right ]\\
-&\mu \frac{\partial H}{\partial t}=\frac{\partial E}{\partial x} \\
-&E\left ( x,0 \right )=sin\left ( 2\pi x \right )\\
-&H\left ( x,0 \right )=0\\
-&E\left ( 0,t \right )=E\left ( 1,t \right ),H\left ( 0,t \right )=H\left ( 1,t \right )
+  a&=b+c+d+e \\
+  a+b&=c+d+e \\
 \end{aligned}
-\right.
-\]\[
-\left \{
-\begin{aligned}
-&\varepsilon \frac{\partial E}{\partial t}=\frac{\partial H}{\partial x},
-E=E\left ( x,t \right ),H=H\left ( x,t \right ),\left ( x,t \right )\in \left [ 0,1 \right ]\times \left[ 0,1 \right ]\\
-&\mu \frac{\partial H}{\partial t}=\frac{\partial E}{\partial x} \\
-&E\left ( x,0 \right )=sin\left ( 2\pi x \right )\\
-&H\left ( x,0 \right )=0\\
-&E\left ( 0,t \right )=E\left ( 1,t \right ),H\left ( 0,t \right )=H\left ( 1,t \right )
-\end{aligned}
-\right.
-\]
+\end{equation}
+
+
+\subsection{代码和抄录环境}
+
+
+
+\subsection{图表环境}
+比较复杂，另起一章说明
+\end{document}
