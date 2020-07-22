@@ -1,25 +1,11 @@
-% 子文件在单独编译时会报
-% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
-% 的警告，其实并没有什么影响，忽略即可
-\documentclass[supercite,fontset=windows]{../../upcthesis}
-\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
-\input{../../style/preamble}
-\fi
-% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
-
+\documentclass[../../main.tex]{subfiles}
 \begin{document}
-
-
-
-
 
 \begin{thankpage}
         大学四年的学习生活即将结束，在此，我要感谢所有曾经教导过我的老师和关心过我的同学，他们在我成长过程中给予了我很大的帮助。本文能够成功的完成，要特别感谢我的导师XXX教授的关怀和教导。
 
         ……
 \end{thankpage}
-
-
 
 \end{document}
 

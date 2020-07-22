@@ -3,10 +3,11 @@
 \documentclass[supercite,fontset=windows]{upcthesis}
 
 
-\def \multiFile{}
-\def\enEnvironment{}
-% \def \twoSidePrint{} %取消此行注释以获得简单的双面打印效果，在特定位置添加空白页。
-\def \eletronicDocument{} %取消此行注释以获得彩色高亮的超链接和交叉引用,便于查看
+% \def\enEnvironment{} %取消此行注释获得英文环境支持，包括定理环境，交叉引用等
+\def \twoSidePrint{} %取消此行注释以获得简单的双面打印效果，在特定位置添加空白页。
+\def \eletronicDocument{} %取消此行注释以获得彩色高亮的超链接和交叉引用,便于编写时查看。打印时取消
+
+
 %导言区设置
 \input{style/preamble}
 
@@ -31,6 +32,7 @@
 
 
 \begin{document}
+%%%%%---------------------------------------------------------------------
 % 封面页
 \maketitle
 \ClearPageStyle
@@ -68,7 +70,7 @@
 % \PrintModeSubfile{sections/test/test.tex}
 
 %%%%%---------------
-%%% 使用手册，请认真阅读。写自己的论文时注释这里
+%%% 使用手册，请编译后认真阅读。写自己的论文时注释这里
 
 
 
@@ -77,8 +79,8 @@
 \PrintModeSubfile{sections/manual/section3.tex}
 \PrintModeSubfile{sections/manual/section4.tex}
 \PrintModeSubfile{sections/manual/section5.tex}
-\PrintModeSubfile{sections/manual/section6.tex}
-
+% \PrintModeSubfile{sections/manual/section6.tex}
+\PrintModeSubfile{sections/manual/section7.tex}
 
 %%%%%---------------
 
@@ -91,12 +93,14 @@
 
 
 %%%%%---------------------------------------------------------------------
+% 设置页眉为默认
+\pagestyle{afterbody}
 
 % 感谢页
 \PrintModeSubfile{sections/after/thankpage}
 
 % 参考文献页
-\PrintModeSubfile{sections/after/reference}	
+\PrintModeSubfile{sections/after/reference}
 
 %附录，不需要的同学可以注释此部分
 \PrintModeSubfile{sections/after/appendix}

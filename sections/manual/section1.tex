@@ -1,12 +1,4 @@
-% 子文件在单独编译时会报
-% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
-% 的警告，其实并没有什么影响，忽略即可
-\documentclass[supercite,fontset=windows]{../../upcthesis}
-\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
-\input{../../style/preamble}
-\fi
-% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
-
+\documentclass[../../main.tex]{subfiles}
 \begin{document}
 
 
@@ -26,24 +18,47 @@ pdf文件中。
 
 latex 会自动对段落进行缩进，并且会忽略掉段前的空格。中文句子中的空格会
 被全部忽略，英文句子中两个单词之间的多个空格会被视为一个空格，多个空
-格也不会加大单词之间的间距。如下所示：
+格也不会加大单词之间的间距。中英文进行混排时，xelatex 也会自动的处理空格。
 
-hello         world
+示例：
 
-中英文混排时，xelatex 也会自动处理空格。
+源文件中的原文：
+
+\verb|中      国    石油     大学China     University      Of    Petroleum|
+
+实际的打印效果：\\
+中      国    石油     大学China               University      Of    Petroleum
+
+
 
 在latex中，单个换行（回车）其实就相当于一个空格，不会使文字另起一段，而是起使源代码更易阅读的作用。
-使用两个反斜杠\verb|\\|可以换行，但不进行分段，它后面的文字不会有缩进,就像这样：\\
-要另起一段，使用\verb|\par|命令或者连续多次换行（多敲几个回车）。
-
-可以使用命令进行换行，不过不会对下一段进行缩进。
-命令 \par 会进行换行并对下一段缩进。
+使用两个反斜杠\verb|\\|或命令\verb|\newline|可以进行换行，但不会另起一段。
+要另起一段，使用\verb|\par|命令或者使用两个及以上的换行（多敲几次回车）。
 
 注意，多个换行只会起到分段作用，不会在文件中输出其他的空白行。这一点与word不同。
 
+示例：
 
+源文件中的原文：
+\begin{verbatim}
+一二三四五六七
+一二三四五六七
 
+一二三四五六七\\
+一二三四五六七
 
+一二三四五六七\par
+一二三四五六七
+\end{verbatim}
+
+一二三四五六七
+一二三四五六七
+
+一二三四五六七\\
+一二三四五六七
+
+一二三四五六七\par
+一二三四五六七
 
 空白
 hspace
@@ -171,6 +186,19 @@ e=mc^{2}
   a+b&=c+d+e \\
 \end{aligned}
 \end{equation}
+
+
+
+
+文本
+
+
+\verb|\mathbf{}| 公式环境内的粗体
+\verb|\textbf{}| 文本的粗体
+\verb|\emph{}| 斜体强调
+\verb|\hspace{1em}| 产生一段横向的空白，长度为当前字号下一个字符"m"的宽度。
+\verb|\vspace{1em} |产生一段纵向的空白，长度为当前字号下一个字符"m"的高度。
+一些常用的特殊字符被LaTeX作为控制字符，如果要实际的打印出他们，需要使用反斜杠\verb|\|进行转义。特殊字符包括\verb|\,#,%,$,&,_,^,{,},~|等。
 
 
 \subsection{代码和抄录环境}

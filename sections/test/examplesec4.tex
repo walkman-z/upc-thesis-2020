@@ -1,3 +1,10 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+% 一个文件最好只写一个章节
+\section{章节名称}
+% 章节内容
+
+
 
 \section{实验及结果分析}
 例如由于起初未能真正掌握各种控件的功能，我设想是要一个下拉菜单，但是学识肤浅的我试了很多种就是达不到我要的效果，……。
@@ -16,11 +23,11 @@
         \begin{tabular}{ccccc}
                 \toprule
                 试验编号 & 功率密度 & 辐照时间 & 显微硬度       & 硬化层深\\ \midrule
-                t-1	&6.37×103	&0.067	&570，456	&0.354\\
-                t-2	&6.37×103	&0.067	&570，456	&0.354\\
-                t-3	&6.37×103	&0.067	&570，456	&0.354\\
-                t-4	&6.37×103	&0.067	&570，456	&0.354\\
-                t-5	&6.37×103	&0.067	&570，456	&0.354\\ \bottomrule
+                t-1     &6.37×103       &0.067  &570，456        &0.354\\
+                t-2     &6.37×103       &0.067  &570，456        &0.354\\
+                t-3     &6.37×103       &0.067  &570，456        &0.354\\
+                t-4     &6.37×103       &0.067  &570，456        &0.354\\
+                t-5     &6.37×103       &0.067  &570，456        &0.354\\ \bottomrule
         \end{tabular}
         \label{data_table}
 \end{table}
@@ -213,7 +220,7 @@ t-5     &6.37×103       &0.067  &570，456        &0.354\\ \hline
         \caption{可换行示例表}
         \begin{tabular}{ccc}
                 \toprule
-                1	& 2& 3\\ \midrule
+                1       & 2& 3\\ \midrule
                 1&\tabincell{c}{3}&6\\
                 1&\tabincell{c}{3}&6\\
                 \tabincell{c}{2}&\tabincell{c}{4444444444\\5555555555}&\tabincell{c}{6}
@@ -236,10 +243,16 @@ t-5     &6.37×103       &0.067  &570，456        &0.354\\ \hline
                 \cmidrule(lr){4-5} \cmidrule(lr){6-9}
                 &   &   &   &   & \multicolumn{3}{c}{BB}&NN\\
                 \cmidrule(lr){6-8} \cmidrule(lr){9-9}
-                & A &S	&D &F &G &H &J &K \\ \midrule
+                & A &S  &D &F &G &H &J &K \\ \midrule
                 Q&$\surd$&$\surd$&   &   &   &    & &\\
-                T&	&		& $\surd$ & $\surd$   &   &  &$\surd$     &\\
-                Y&	&		& $\surd$ & $\surd$   &   &  &    &$\surd$ \\ \bottomrule
+                T&      &               & $\surd$ & $\surd$   &   &  &$\surd$     &\\
+                Y&      &               & $\surd$ & $\surd$   &   &  &    &$\surd$ \\ \bottomrule
         \end{tabular}
         \label{duoliehebing}
 \end{table}
+
+
+
+
+
+\end{document}

@@ -1,12 +1,4 @@
-% 子文件在单独编译时会报
-% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
-% 的警告，其实并没有什么影响，忽略即可
-\documentclass[supercite,fontset=windows]{../../upcthesis}
-\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
-\input{../../style/preamble}
-\fi
-% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
-
+\documentclass[../../main.tex]{subfiles}
 \begin{document}
 
 
@@ -16,10 +8,7 @@
 %%%%%样式文件不同于学校的要求。劳烦同学们手动引用文献
 
 %%%%%手动指定在目录添加参考文献条目
-\clearpage
-\pagestyle{afterbody}
-\phantomsection
-\addcontentsline{toc}{section}{参考文献}
+
 
 % 按照学校word模板中对参考文献的要求，列出以下几点给同学们参考
 
@@ -47,8 +36,12 @@
 
 % 日期统一改为如下格式 2003.5.12
 
+\pagestyle{afterbody}
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
 
 \begin{thebibliography}{99}
+
 \bibitem{1} 严蔚敏, 吴伟民, 数据结构, 北京: 清华大学出版社, 1997.4.
 \bibitem{2} 沈晴霓, 聂青, 苏京霞, 现代程序设计—C++与数据结构面向对象的方法与实现, 北京: 北京理工大学出版社, 2002.8.
 \bibitem{3} T. Connolly, C. Begg, Database systems, 北京: 电子科技工业出版社, 2004.7.

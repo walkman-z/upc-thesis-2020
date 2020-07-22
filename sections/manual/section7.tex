@@ -1,12 +1,4 @@
-
-% 子文件在单独编译时会报
-% “LaTeX Warning: You have requested document class `../../upcthesis', but the document class provides `upcthesis'.”
-% 的警告，其实并没有什么影响，忽略即可
-\documentclass[supercite,fontset=windows]{../../upcthesis}
-\ifx\multiFile\undefined %防止在主文件中进行编译时多次导入导言区设置文件
-\input{../../style/preamble}
-\fi
-% 导入这两个文件时使用的是相对路径，所以不要胡乱修改目录结构，否则会造成模板无法使用
+\documentclass[../../main.tex]{subfiles}
 
 \begin{document}
 
@@ -68,17 +60,14 @@ def是宏的内容，传入的参数可以在内容中使用\verb|#1,#2,|$\cdots
 
 字体命令
 
-文本
 
+\begin{figure}[htbp]
+\centering
 
-\verb|\mathbf{}| 公式环境内的粗体
-\verb|\textbf{}| 文本的粗体
-\verb|\emph{}| 斜体强调
-\verb|\hspace{1em}| 产生一段横向的空白，长度为当前字号下一个字符"m"的宽度。
-\verb|\vspace{1em} |产生一段纵向的空白，长度为当前字号下一个字符"m"的高度。
-一些常用的特殊字符被LaTeX作为控制字符，如果要实际的打印出他们，需要使用反斜杠\verb|\|进行转义。特殊字符包括\verb|\,#,%,$,&,_,^,{,},~|等。
-
-
+\includegraphics{../../figure/guozuni.png}
+\caption{过阻尼响应}
+\label{guozuni}
+\end{figure}
 
 
 
