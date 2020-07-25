@@ -287,25 +287,25 @@
 % 添加图需要的库
 \RequirePackage{graphicx}
 
-% 重新定义图和表的浮动环境
-\newenvironment{generalfig}[3][htbp]{
-	\def \figcaption {#2}
-	\def \figlabel {#3}
-	\begin{figure}[#1]
-		\centering
-	}{
-		\caption{\figcaption} \label{\figlabel}
-	\end{figure}
-}
-\newenvironment{generaltab}[3][htbp]{
-	\def \tabcaption {#2}
-	\def \tablabel {#3}
-	\begin{table}[#1]
-	\centering
-	\caption{\tabcaption} \label{\tablabel}
-	}{
-	\end{table}
-}
+% %%%%重新定义图和表的浮动环境
+% \newenvironment{generalfig}[3][htbp]{
+% 	\def \figcaption {#2}
+% 	\def \figlabel {#3}
+% 	\begin{figure}[#1]
+% 		\centering
+% 	}{
+% 		\caption{\figcaption} \label{\figlabel}
+% 	\end{figure}
+% }
+% \newenvironment{generaltab}[3][htbp]{
+% 	\def \tabcaption {#2}
+% 	\def \tablabel {#3}
+% 	\begin{table}[#1]
+% 	\centering
+% 	\caption{\tabcaption} \label{\tablabel}
+% 	}{
+% 	\end{table}
+% }
 
 % -------------------------
 % ------设置公式格式--------

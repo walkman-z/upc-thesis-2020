@@ -123,14 +123,14 @@
 {
 	\newtheorem{definition}{定义}[section]
 	\newtheorem{theorem}{定理}[section]
-	\newtheorem{lemma}[theorem]{引理}
-	\newtheorem{proposition}[theorem]{命题}
-	\newtheorem{corollary}[theorem]{推论}
+	\newtheorem{lemma}{引理}[section]
+	\newtheorem{proposition}{命题}[section]
+	\newtheorem{corollary}{推论}[section]
 	\newtheorem{example}{例}[section]
 	\newtheorem{remark}{注}[section]
 }
-\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{\hfill\qedsymbol\par}
-\renewenvironment{proof}{\begin{proofenv}{证明:}}{\end{proofenv}}
+\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{}
+\renewenvironment{proof}{\begin{proofenv}{证明:}}{\end{proofenv}\newline \rightline{\qedsymbol}\par}
 \newenvironment{solution}{\begin{proofenv}{解:}}{\end{proofenv}}
 
 \else
@@ -138,16 +138,16 @@
 %% 英文定理环境
 {
 	\newtheorem{theorem}{Theorem}[section]
-	\newtheorem{lemma}[theorem]{Lemma}
-	\newtheorem{proposition}[theorem]{Proposition}
-	\newtheorem{corollary}[theorem]{Corollary}
+	\newtheorem{lemma}{Lemma}[section]
+	\newtheorem{proposition}{Proposition}[section]
+	\newtheorem{corollary}{Corollary}[section]
 	\newtheorem{definition}{Definition}[section]
 	\newtheorem{example}{Example}[section]
 	\newtheorem{remark}{Remark}[section]
 }
 
-\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{\hfill\qedsymbol\par}
-\renewenvironment{proof}{\begin{proofenv}{Proof:}}{\end{proofenv}}
+\newenvironment{proofenv}[1]{\par\indent\songti\textbf{#1}\hspace{0.3em}}{}
+\renewenvironment{proof}{\begin{proofenv}{Proof:}}{\end{proofenv}\newline \rightline{\qedsymbol}\par}
 \newenvironment{solution}{\begin{proofenv}{Solution:}}{\end{proofenv}}
 
 \fi
@@ -162,6 +162,8 @@
 % 交叉引用样式
 
 
+\ifx \enEnvironment \undefined
+%%%--------------------------中文环境引用名
 \def\sectionautorefname~#1\null{%
 	第~#1~节\null
 }
@@ -171,16 +173,13 @@
 \def\subsubsectionautorefname~#1\null{%
 	第~#1~小节\null
 }
-\def\subsubsectionautorefname~#1\null{%
-	第~#1~小节\null
-}
+
 \def\paragraphautorefname~#1\null{%
 	段落~#1~\null
 }
 \def\subparagraphautorefname~#1\null{%
 	段落~#1~\null
 }
-
 
 % 重新设置图表 auto ref
 \def\figureautorefname~#1\null{%
@@ -195,6 +194,93 @@
 	式~(#1)~\null
 }
 
+
+\def \definitionautorefname~#1\null{
+	定义~#1~\null
+}
+\def \theoremautorefname~#1\null{
+	定理~#1~\null
+}
+\def \corollaryautorefname~#1\null{
+	推论~#1~\null
+}
+\def \lemmaautorefname~#1\null{
+	引理~#1~\null
+}
+\def \propositionautorefname~#1\null{
+	命题~#1~\null
+}
+\def \exampleautorefname~#1\null{
+	例~#1~\null
+}
+\def \remarkautorefname~#1\null{
+	注~#1~\null
+}
+
+
+\else
+
+%%%--------------------------英文环境引用名
+
+\def\sectionautorefname~#1\null{%
+	Section~#1~\null
+}
+\def\subsectionautorefname~#1\null{%
+	Subsection~#1~\null
+}
+\def\subsubsectionautorefname~#1\null{%
+	Subsubsection~#1~\null
+}
+
+\def\paragraphautorefname~#1\null{%
+	Paragraph~#1~\null
+}
+\def\subparagraphautorefname~#1\null{%
+	Paragraph~#1~\null
+}
+
+
+% 重新设置图表 auto ref
+\def\figureautorefname~#1\null{%
+	Figure~#1~\null
+}
+\def\tableautorefname~#1\null{%
+	Tbale~#1~\null
+}
+
+% 重新设置公式autoref
+\def\equationautorefname~#1\null{%
+	Equation~(#1)~\null
+}
+
+
+
+\def \definitionautorefname~#1\null{
+	Definition~#1~\null
+}
+\def \theoremautorefname~#1\null{
+	Theorem~#1~\null
+}
+\def \corollaryautorefname~#1\null{
+	Corollary~#1~\null
+}
+\def \lemmaautorefname~#1\null{
+	Lemma~#1~\null
+}
+\def \propositionautorefname~#1\null{
+	Proposition~#1~\null
+}
+\def \exampleautorefname~#1\null{
+	Example~#1~\null
+}
+\def \remarkautorefname~#1\null{
+	Remark~#1~\null
+}
+
+
+\captionsetup[figure]{name={Figure}}
+\captionsetup[table]{name={Table}}
+\fi
 
 
 
