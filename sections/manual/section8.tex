@@ -1,0 +1,48 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+% 一个文件最好只写一个章节
+\section{代码环境}
+% 章节内容
+
+伪代码、算法环境，内部可以使用数学模式来表达。
+\begin{algorithm}[!h]
+	\caption{PARTITION$(A,p,r)$}%算法标题
+	
+	\label{11111111}
+
+	\begin{algorithmic}[1]%一行一个标行号
+
+
+		\STATE $i=p$
+		\FOR{$j=p$ to $r$}
+		\IF{$A[j]<=0$}
+		\STATE $swap(A[i],A[j])$//交换两个值
+		\STATE $i=\sum_{j=0}^{n} x^k$
+		\ENDIF
+		\ENDFOR
+	\end{algorithmic}
+\end{algorithm}
+
+
+\autoref{11111111}
+
+代码环境，适合简短代码的情况。
+
+\begin{lstlisting}{c}
+int main(int argc, char const *argv[])
+{
+	/* code */
+	return 0;
+}
+\end{lstlisting}
+
+从文件中插入代码（推荐），相当于对代码环境做了封装，直接从文件中导入代码。建议将代码文件放在主目录的code/目录内，然后通过\verb|\lstinputlisting{路径}|命令将代码引入。注意使用相对路径。
+
+这样的好处是代码修改后可以直接编译，省去了复制粘贴的步骤，能有效防止因疏忽导致的最终论文中代码与实际代码不一致的情况。
+\lstinputlisting{../../code/test.cpp}
+
+\end{document}
+
+
+
+

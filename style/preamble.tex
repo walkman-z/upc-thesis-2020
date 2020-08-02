@@ -22,6 +22,11 @@
 \usepackage{etoolbox}
 \usepackage{titlesec}
 
+% 算法/伪代码环境
+\usepackage{algorithm}  
+\usepackage{algorithmic} 
+ % 代码环境
+\usepackage{listings}
 
 % \usepackage{tocloft}
 
@@ -216,7 +221,9 @@
 \def \remarkautorefname~#1\null{
 	注~#1~\null
 }
-
+\def \algorithmautorefname~#1\null{
+	算法~#1~\null
+}
 
 \else
 
@@ -275,6 +282,9 @@
 }
 \def \remarkautorefname~#1\null{
 	Remark~#1~\null
+}
+\def \algorithmautorefname~#1\null{
+	Algorithm~#1~\null
 }
 
 
@@ -358,3 +368,21 @@
 	bookmarksnumbered = true
 }
 \fi
+
+%%%%%---------------------------------------------------------------------
+
+\lstset{
+    % basicstyle          =   \sffamily,          % 基本代码风格
+    % keywordstyle        =   \bfseries,          % 关键字风格
+    commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
+    % stringstyle         =   \ttfamily,  % 字符串风格
+    flexiblecolumns,                % 别问为什么，加上这个
+    numbers             =   left,   % 行号的位置在左边
+    showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不现实了
+    numberstyle         =   \zihao{-5}\ttfamily,    % 行号的样式，小五号，tt等宽字体
+    showstringspaces    =   false,
+    captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
+    % frame               =   lrtb,   % 显示边框
+     breaklines      =   true,   % 自动换行，建议不要写太长的行
+    columns         =   fixed,  % 强制等宽字体，更美观
+}
