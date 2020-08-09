@@ -6,14 +6,15 @@
 \usepackage{makecell}
 %%% 数学环境？
 \usepackage{amsmath}
-\usepackage{mathtools}
+% \usepackage{mathtools}
 \usepackage{amsfonts,amssymb}
+\usepackage{unicode-math}
 
 %%% 子图
 \usepackage{subfigure}
 
 %%% 列表环境
-\usepackage{enumerate}
+\usepackage{enumitem}
 %%% 图片环境
 \usepackage{graphicx}
 
@@ -36,8 +37,6 @@
 
 
 \usepackage{subfiles}
-%%% 定义定理环境的宏包
-\usepackage{amsthm}
 %%%审阅功能
 % \usepackage{changes}
 %%%交叉引用宏包，要放在最后引入
@@ -46,67 +45,12 @@
 
 
 
-%%%%%---------------------------------------------------------------------
-% 祖传代码，别乱动
-
-
-%%%%%%%%%调整subsection与subsubsection格式
-\titlespacing*{\subsubsection}{0pt}{0.5ex plus .2ex minus .2ex}{%
-	0.5ex plus .2ex
-}
-\titlespacing*{\subsection}{0pt}{0.5ex plus .2ex minus .2ex}{%
-	0.5ex plus .2ex
-}
-%%%%%%%%%貌似是调整参考文献格式？
-\let\oldthebibliography \thebibliography
-\let\endoldthebibliography \endthebibliography
-%\renewenvironment{thebibliography}[1]{%
-%	\begin{oldthebibliography}{#1}%
-%		\setlength{\parskip}{0ex}%
-%		\setlength{\itemsep}{0ex}%
-%		\setlength{\itemindent}{4ex}
-%		\setlength{\leftmargin}{-3pt}%
-%	}% 
-%	{
-%	\end{oldthebibliography}%
-%}
-%%%%%%%%%调整数学公式格式，貌似是设置公式编号格式？
-\renewcommand{\theequation}{\thesection -\arabic{equation}}
-\makeatletter
-%%%%%%%%%貌似是调整参考文献文本格式(如缩进等)，非参考文献自身格式
-\renewenvironment{thebibliography}[1]
-{\section*{\refname}%
-	\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-	\list{\@biblabel{\@arabic\c@enumiv}}%
-	{\settowidth\labelwidth{\@biblabel{#1}}%
-		\setlength{\itemindent}{\dimexpr\labelwidth+\labelsep}
-		\leftmargin\z@
-		\@openbib@code
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-	\sloppy
-	\clubpenalty4000
-	\@clubpenalty \clubpenalty
-	\widowpenalty4000%
-	\sfcode`\.\@m}
-{\def\@noitemerr
-	{\@latex@warning{Empty `thebibliography' environment}}%
-	\endlist}
-
-
-
-%%%%貌似是数学公式从每个章节（section）重新开始编号
-\@addtoreset{equation}{section}
-
-
-
-
-
 
 
 
 %%%%%---------------------------------------------------------------------
+%%% 定义定理环境的宏包
+\usepackage{amsthm}
 % 中英定理类环境的声明
 
 % 定义定理样式
@@ -158,15 +102,9 @@
 \fi
 
 
-
-
-
-
 %%%%%---------------------------------------------------------------------
 
 % 交叉引用样式
-
-
 \ifx \enEnvironment \undefined
 %%%--------------------------中文环境引用名
 \def\sectionautorefname~#1\null{%
@@ -325,8 +263,6 @@
 \newenvironment{PrintMode}{
 	\clearpage
 	\setcounter{startpage}{\value{page}}
-
-
 }{	
 	\clearpage
 	\setcounter{endpage}{\value{page}}
@@ -341,8 +277,6 @@
 			\addtocounter{page}{-1} % 如果环境内补了一页空白页，将实际页码减一
 		\fi
 	\fi
-
-
 }
 
 \newcommand \PrintModeSubfile[1]{\begin{PrintMode}\subfile{#1}\end{PrintMode}}
@@ -370,7 +304,7 @@
 \fi
 
 %%%%%---------------------------------------------------------------------
-
+% 代码设置
 \lstset{
     % basicstyle          =   \sffamily,          % 基本代码风格
     % keywordstyle        =   \bfseries,          % 关键字风格
@@ -386,3 +320,22 @@
      breaklines      =   true,   % 自动换行，建议不要写太长的行
     columns         =   fixed,  % 强制等宽字体，更美观
 }
+
+
+% 列表宏包样式
+\setlist{noitemsep}
+
+\setmathfont{Cambria Math}
+
+
+% 表格设定
+% 添加复杂的表格宏
+\usepackage{booktabs}
+% 设置三线表格式
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\lightrulewidth}{0.5pt}
+\setlength{\cmidrulewidth}{0.5pt}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\abovetopsep}{0pt}
+\setlength{\belowbottomsep}{0pt}

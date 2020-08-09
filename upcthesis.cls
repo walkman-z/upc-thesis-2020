@@ -95,9 +95,13 @@
 %---------------
 %----定义字体----
 %---------------
+
+
+
 % 设置正文常用字体
 \setmainfont{Times New Roman}
 \RequirePackage{fontspec}
+
 % 封面使用华文中宋
 \setCJKfamilyfont{hwzs}{STZhongsong}
 \newcommand{\huawenzhongsong}{\CJKfamily{hwzs}}
@@ -273,16 +277,6 @@
 \newcolumntype{C}{>{\centering \arraybackslash}X}
 \newcolumntype{R}{>{\ragerdright \arraybackslash}X}
 
-% 添加复杂的表格宏
-\RequirePackage{booktabs}
-% 设置三线表格式
-\setlength{\heavyrulewidth}{1.5pt}
-\setlength{\lightrulewidth}{0.5pt}
-\setlength{\cmidrulewidth}{0.5pt}
-\setlength{\aboverulesep}{0pt}
-\setlength{\belowrulesep}{0pt}
-\setlength{\abovetopsep}{0pt}
-\setlength{\belowbottomsep}{0pt}
 
 % 添加图需要的库
 \RequirePackage{graphicx}
@@ -326,11 +320,6 @@
 
 
 
-%---------------------------
-%-----定义列表项的样式--------
-%---------------------------
-\RequirePackage{enumitem}
-\setlist{noitemsep}
 
 
 %---------------------------
@@ -812,5 +801,69 @@
 	
 	\clearpage
 }
+
+
+
+
+
+%%%%%---------------------------------------------------------------------
+% 祖传代码，别乱动
+
+
+%%%%%%%%%调整subsection与subsubsection格式
+\titlespacing*{\subsubsection}{0pt}{0.5ex plus .2ex minus .2ex}{%
+	0.5ex plus .2ex
+}
+\titlespacing*{\subsection}{0pt}{0.5ex plus .2ex minus .2ex}{%
+	0.5ex plus .2ex
+}
+%%%%%%%%%貌似是调整参考文献格式？
+\let\oldthebibliography \thebibliography
+\let\endoldthebibliography \endthebibliography
+%\renewenvironment{thebibliography}[1]{%
+%	\begin{oldthebibliography}{#1}%
+%		\setlength{\parskip}{0ex}%
+%		\setlength{\itemsep}{0ex}%
+%		\setlength{\itemindent}{4ex}
+%		\setlength{\leftmargin}{-3pt}%
+%	}% 
+%	{
+%	\end{oldthebibliography}%
+%}
+%%%%%%%%%调整数学公式格式，貌似是设置公式编号格式？
+\renewcommand{\theequation}{\thesection -\arabic{equation}}
+\makeatletter
+%%%%%%%%%貌似是调整参考文献文本格式(如缩进等)，非参考文献自身格式
+\renewenvironment{thebibliography}[1]
+{\section*{\refname}%
+	\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\setlength{\itemindent}{\dimexpr\labelwidth+\labelsep}
+		\leftmargin\z@
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
+
+
+
+%%%%貌似是数学公式从每个章节（section）重新开始编号
+\@addtoreset{equation}{section}
+
+
+
+
+
+
+
 
 % 2018/2/9 22:03

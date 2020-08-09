@@ -1,0 +1,38 @@
+%!TEX option = -shell-escape
+\documentclass[supercite,fontset=windows]{../upcthesis}
+% \def\enEnvironment{} %取消此行注释获得英文环境支持，包括定理环境，交叉引用等
+% \def \twoSidePrint{} %取消此行注释以获得简单的双面打印效果，在特定位置添加空白页。
+\def \eletronicDocument{} %取消此行注释以获得彩色高亮的超链接和交叉引用,便于编写时查看。打印时取消
+%导言区设置
+\input{../style/preamble}
+% 封面各项参数
+% \makeatother
+\title{中国石油大学本科毕业论文模板(latex实现)}
+% % \ensubtitle{This is EnSubTitle}
+% \entitle{The design and implementation of the linear form}
+\author{张英杰}
+\date{\today}
+% \supervisor{罗\hspace{0.53cm}翔}
+% \stuid{1401013101}
+% \classnum{电气工程及其自动化14-5班}
+
+
+
+
+\begin{document}
+%%%%%---------------------------------------------------------------------
+% 封面页
+\maketitle
+% \ClearPageStyle
+\tableofcontents
+% \ClearPageStyle   
+\setcounter{page}{1}
+\PrintModeSubfile{manual/section1.tex}
+\PrintModeSubfile{manual/section2.tex}
+\PrintModeSubfile{manual/section3.tex}
+\PrintModeSubfile{manual/section4.tex}
+\PrintModeSubfile{manual/section5.tex}
+\PrintModeSubfile{manual/section6.tex}
+\PrintModeSubfile{manual/section7.tex}
+\PrintModeSubfile{manual/section8.tex}
+\end{document}
