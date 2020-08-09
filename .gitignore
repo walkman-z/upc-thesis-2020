@@ -68,5 +68,7 @@ sections/test/*.pdf
 sections/manualbefore/*.pdf
 *.pdf
 !main.pdf
-2020新格式-数学与信息专业--毕业设计模板.pdf
+!使用说明/latex基础知识与数学符号速查.pdf
+!使用说明/对照word模板.pdf
+!使用说明/模板使用手册.pdf
 README.org
