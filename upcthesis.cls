@@ -390,26 +390,26 @@
 		\includegraphics[width=7.3cm, height=1.8cm]{\UPC@titlecolor}\\
 		\begin{center}
 			\vspace{5em}
-			\makebox[\textwidth]{\zihao{-0} \heiti \bfseries 本\hfill 科\hfill 毕\hfill 业\hfill 设\hfill 计\hfill （论文）}\\
+			\makebox[\textwidth][c]{\zihao{-0} \heiti \bfseries 本\hfill 科\hfill 毕\hfill 业\hfill 设\hfill 计\hfill （论文）}\\
 				\vspace*{36pt}
 				
 				\begin{flushleft}
-				\hspace{0.8em}\zihao{-2} \heiti \makebox[25em]{题\hspace{0.8em}目\textbf{：}\parbox[h][1em][l]{13cm}{\@title}} 
+				\hspace{0.8em}\zihao{-2} \heiti \makebox[24em]{题\hspace{0.8em}目\textbf{：}\parbox[t][1em][l]{13cm}{\@title}} 
 				\end{flushleft}
 				\makebox[\textwidth][r]{\heiti \zihao{-2} \@subtitle}
 %				\vspace{9.7em}
 				\vfill
 				{\zihao{3} \fangsong
 					\renewcommand\arraystretch{1.5}
-					\begin{tabular}{ll}
-						\makebox[4.5em][s]{学生姓名:} &
-						\makebox[3em][s]{\UPC@titlelinefont\@author}\\
-						\makebox[4.5em][s]{学 \hfill 号:} &
+					\begin{tabular}{r@{：}l}
+						\makebox[4.5em][s]{学生姓名} &
+						\makebox[5em][l]{\UPC@titlelinefont\@author}\\
+						\makebox[4.5em][s]{学号} &
 						\makebox[\UPC@titlelength][l]{\UPC@titlelinefont\@stuid}\\
-						\makebox[4.5em][s]{专业班级:} &
+						\makebox[4.5em][s]{专业班级} &
 						\makebox[\UPC@titlelength][l]{\UPC@titlelinefont\@classnum}\\
-						\makebox[4.5em][s]{指导教师:} &
-						\makebox[3em][s]{\UPC@titlelinefont\@supervisor}\\
+						\makebox[4.5em][s]{指导教师} &
+						\makebox[5em][l]{\UPC@titlelinefont\@supervisor}\\
 					\end{tabular}
 				}\\
 			\vspace*{5em}
@@ -510,7 +510,7 @@
 %	\addcontentsline{toc}{section}{摘要}
 	\begin{center}
 		\vspace*{1em}
-		\parbox[h][1em][c]{\textwidth}{\heiti \zihao{-2} \vspace*{0.5em} 
+		\parbox[c]{\textwidth}{\heiti \zihao{-2} \vspace*{0.5em} 
 		\begin{center}\@title\end{center}
 		\vspace{0.5em}}\\
 		\StrLen{\@subtitle}[\SubTitleLen]
@@ -526,7 +526,7 @@
 }{
 	\vspace{1.5em}
 	\par\noindent
-	{\songti \zihao{-4} \bfseries \hspace{0.85cm}关键词：}\parbox[h][1em][l]{13.5cm}{\cnkeyword}
+	{\songti \zihao{-4} \bfseries \hspace{0.85cm}关键词：}\parbox[t][1em][l]{13.5cm}{\cnkeyword}
 	\clearpage
 }
 
@@ -552,7 +552,7 @@
 }{
 	\vspace{1.5em}
 	\par\noindent
-	{\zihao{-4} \bfseries \hspace{0.85cm}Keywords: }\parbox[h][1em][l]{13cm}{\enkeyword}
+	{\zihao{-4} \bfseries \hspace{0.85cm}Keywords: }\parbox[t][1em][l]{13cm}{\enkeyword}
 	\clearpage
 }
 
