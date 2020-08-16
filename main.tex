@@ -2,7 +2,7 @@
 \documentclass[supercite,fontset=windows]{upcthesis}
 
 % \def\enEnvironment{} %取消此行注释获得英文环境支持，包括定理环境，交叉引用等
-% \def \twoSidePrint{} %取消此行注释以获得简单的双面打印效果，在特定位置添加空白页。
+\def \twoSidePrint{} %取消此行注释以获得简单的双面打印效果，在特定位置添加空白页。
 \def \eletronicDocument{} %取消此行注释以获得彩色高亮的超链接和交叉引用,便于编写时查看。打印时取消
 %导言区设置
 \input{style/preamble}
@@ -28,20 +28,19 @@
 \maketitle
 \ClearPageStyle
 % 中文摘要
-\PrintModeSubfile{sections/before/cnabstract}
+\PrintModeInsert{\subfile{sections/before/cnabstract}}
 % 英文摘要
-\PrintModeSubfile{sections/before/enabstract}
+\PrintModeInsert{\subfile{sections/before/enabstract}}
 % 目录页
-\tableofcontents
-\ClearPageStyle   % 如果你的目录总页数是偶数，注释掉这一行。否则双面打印时会多出一页空白页
-% 防止添加空白页导致的页码出错
+\PrintModeInsert{\tableofcontents}
+% 设置页码
 \setcounter{page}{1}
 
 %%%%%---------------------------------------------------------------------
 %%% 你的章节，使用时根据你的需要来导入,建议放在 sections/body/ 文件夹内，并且规范命名。
 
-% \PrintModeSubfile{sections/body/section:引言.tex}
-% \PrintModeSubfile{sections/body/section:章节命名.tex}
+% \PrintModeInsert{\subfile{sections/body/section:引言.tex}}
+% \PrintModeInsert{\subfile{sections/body/section:章节命名.tex}}
 % ......
 
 %%%%%---------------------------------------------------------------------
@@ -49,9 +48,9 @@
 % 重设置页眉样式
 \pagestyle{afterbody}
 % 致谢页
-\PrintModeSubfile{sections/after/thankpage}
+\PrintModeInsert{\subfile{sections/after/thankpage}}
 % 参考文献页
-\PrintModeSubfile{sections/after/reference}
+\PrintModeInsert{\subfile{sections/after/reference}}
 %附录，不需要的同学可以注释此部分
-\PrintModeSubfile{sections/after/appendix}
+\PrintModeInsert{\subfile{sections/after/appendix}}
 \end{document}

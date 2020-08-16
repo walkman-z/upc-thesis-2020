@@ -695,7 +695,7 @@
 		\oldtableofcontents
 		\clearpage
 		\pagestyle{main}
-		\setcounter{page}{1}
+		% \setcounter{page}{1}
 	}
 	% 旧命令
 	\newcommand{\maketoc}[1][nopagenum]{

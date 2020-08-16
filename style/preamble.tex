@@ -266,10 +266,7 @@
 }{	
 	\clearpage
 	\setcounter{endpage}{\value{page}}
-	% \thestartpage
-	% \theendpage
 	\addtocounter{endpage}{\value{startpage}}
-
 	\ifodd \value{endpage}
 		\ClearPageStyle
 		\ifx \twoSidePrint \undefined
@@ -279,7 +276,7 @@
 	\fi
 }
 
-\newcommand \PrintModeSubfile[1]{\begin{PrintMode}\subfile{#1}\end{PrintMode}}
+\newcommand \PrintModeInsert[1]{\begin{PrintMode}#1\end{PrintMode}}
 
 
 
